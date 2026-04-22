@@ -1,0 +1,1988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoFlow – Automate Your Work & Life in 24 Hours | n8n + Telegram Bot India</title>
+<meta name="description" content="India's #1 automation service using n8n + Telegram Bot. Automate your business, daily tasks & workflows. No coding needed. Starting ₹499. 100+ users automated. Get free demo today!">
+<meta name="keywords" content="automation service India, n8n automation, Telegram bot automation, business automation India, WhatsApp alternative automation, workflow automation Bangladesh, no-code automation">
+<meta name="robots" content="index, follow">
+<meta name="author" content="AutoFlow India">
+<meta property="og:title" content="AutoFlow – Automate Your Work & Life in 24 Hours 🚀">
+<meta property="og:description" content="No coding. No stress. We build your automation system for you. n8n + Telegram Bot Integration. Starting ₹499.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://autoflow.in">
+<link rel="canonical" href="https://autoflow.in">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "AutoFlow India",
+  "description": "Daily Life & Business Automation using n8n + Telegram Bot Integration",
+  "url": "https://autoflow.in",
+  "telephone": "+91-0000000000",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "IN"
+  },
+  "priceRange": "₹499 - ₹1999",
+  "serviceType": "Business Automation, n8n Automation, Telegram Bot Integration",
+  "areaServed": ["India", "Bangladesh"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Automation Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Starter Automation"}, "price": "499", "priceCurrency": "INR"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business Automation"}, "price": "999", "priceCurrency": "INR"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Full Stack Automation"}, "price": "1999", "priceCurrency": "INR"}
+    ]
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #060912;
+  --bg2: #0b1120;
+  --surface: rgba(255,255,255,0.04);
+  --surface2: rgba(255,255,255,0.07);
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.14);
+  --accent: #3b82f6;
+  --accent2: #6366f1;
+  --accent3: #0ea5e9;
+  --tg: #0088cc;
+  --green: #10b981;
+  --yellow: #f59e0b;
+  --red: #ef4444;
+  --text: #f1f5f9;
+  --text2: #94a3b8;
+  --text3: #64748b;
+  --grad: linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%);
+  --grad2: linear-gradient(135deg, #0ea5e9 0%, #3b82f6 100%);
+  --glow: 0 0 60px rgba(99,102,241,0.2);
+  --radius: 16px;
+  --radius2: 24px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1,h2,h3,h4,h5 { font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; line-height: 1.2; }
+
+/* ── NOISE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container { max-width: 1120px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
+
+/* ── NAVBAR ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  padding: 0 20px;
+  transition: all 0.3s ease;
+}
+nav.scrolled {
+  background: rgba(6,9,18,0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 0;
+}
+.logo {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-decoration: none;
+}
+.logo span { color: #fff; -webkit-text-fill-color: #fff; }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  color: var(--text2);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--text); }
+.nav-cta {
+  background: var(--grad);
+  color: #fff !important;
+  padding: 9px 20px;
+  border-radius: 50px;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  transition: opacity 0.2s, transform 0.2s !important;
+}
+.nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+.hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.hamburger span { width: 24px; height: 2px; background: var(--text2); border-radius: 2px; transition: all 0.3s; display: block; }
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px; left: 0; right: 0;
+  background: rgba(6,9,18,0.97);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 20px;
+  z-index: 999;
+  flex-direction: column;
+  gap: 16px;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: var(--text2); text-decoration: none; font-size: 1rem; padding: 8px 0; }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 60px;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  animation: float 8s ease-in-out infinite;
+}
+.orb1 { width: 500px; height: 500px; background: #3b82f6; top: -100px; right: -100px; animation-delay: 0s; }
+.orb2 { width: 400px; height: 400px; background: #6366f1; bottom: -100px; left: -80px; animation-delay: -3s; }
+.orb3 { width: 300px; height: 300px; background: #0ea5e9; top: 50%; left: 30%; animation-delay: -6s; opacity: 0.08; }
+
+@keyframes float {
+  0%,100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-30px) scale(1.05); }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.badge-row { display: flex; gap: 10px; margin-bottom: 24px; flex-wrap: wrap; }
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border: 1px solid;
+}
+.badge-blue { background: rgba(59,130,246,0.12); border-color: rgba(59,130,246,0.3); color: #93c5fd; }
+.badge-red { background: rgba(239,68,68,0.12); border-color: rgba(239,68,68,0.3); color: #fca5a5; }
+.badge-green { background: rgba(16,185,129,0.12); border-color: rgba(16,185,129,0.3); color: #6ee7b7; }
+.pulse { width: 8px; height: 8px; border-radius: 50%; background: #ef4444; animation: pulse 1.5s infinite; display: inline-block; }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
+
+.hero-h1 {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  letter-spacing: -0.02em;
+}
+.hero-h1 .gradient-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-sub {
+  font-size: 1.15rem;
+  color: var(--text2);
+  margin-bottom: 36px;
+  max-width: 480px;
+  line-height: 1.7;
+}
+.hero-cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0);
+  transition: background 0.2s;
+}
+.btn:hover::after { background: rgba(255,255,255,0.08); }
+.btn-primary {
+  background: var(--grad);
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(99,102,241,0.35);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(99,102,241,0.45); }
+.btn-tg {
+  background: var(--tg);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0,136,204,0.3);
+}
+.btn-tg:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,136,204,0.4); }
+.btn-outline {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border2);
+}
+.btn-outline:hover { border-color: rgba(255,255,255,0.3); background: var(--surface2); }
+.btn-white {
+  background: #fff;
+  color: #0f172a;
+  font-weight: 700;
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,255,255,0.2); }
+
+.hero-stats { display: flex; gap: 36px; flex-wrap: wrap; }
+.stat-item { }
+.stat-num {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.stat-label { font-size: 0.8rem; color: var(--text3); font-weight: 500; }
+
+/* Hero visual card */
+.hero-visual {
+  position: relative;
+}
+.hero-card {
+  background: var(--surface2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius2);
+  padding: 28px;
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(99,102,241,0.5), transparent);
+}
+.flow-nodes { display: flex; flex-direction: column; gap: 12px; }
+.flow-node {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  animation: slideIn 0.5s ease forwards;
+  opacity: 0;
+}
+.flow-node:nth-child(1) { animation-delay: 0.2s; }
+.flow-node:nth-child(2) { animation-delay: 0.4s; }
+.flow-node:nth-child(3) { animation-delay: 0.6s; }
+.flow-node:nth-child(4) { animation-delay: 0.8s; }
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+.node-icon {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.node-title { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+.node-sub { font-size: 0.72rem; color: var(--text3); }
+.node-status {
+  margin-left: auto;
+  font-size: 0.7rem;
+  padding: 3px 8px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+.status-live { background: rgba(16,185,129,0.15); color: #10b981; border: 1px solid rgba(16,185,129,0.2); }
+.status-done { background: rgba(59,130,246,0.15); color: #60a5fa; border: 1px solid rgba(59,130,246,0.2); }
+.arrow-connector {
+  display: flex;
+  justify-content: center;
+  color: var(--text3);
+  font-size: 0.85rem;
+  margin: -4px 0;
+}
+.floating-badge {
+  position: absolute;
+  background: rgba(16,185,129,0.15);
+  border: 1px solid rgba(16,185,129,0.3);
+  border-radius: 50px;
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  color: #6ee7b7;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.fb1 { top: -16px; right: 20px; }
+.fb2 { bottom: -16px; left: 20px; }
+
+/* ── SECTIONS ── */
+section { padding: 100px 0; position: relative; }
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(99,102,241,0.1);
+  border: 1px solid rgba(99,102,241,0.25);
+  color: #a5b4fc;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+.section-sub { color: var(--text2); font-size: 1.05rem; max-width: 560px; line-height: 1.7; margin-bottom: 60px; }
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+/* ── TICKER ── */
+.ticker-wrap {
+  background: rgba(99,102,241,0.08);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  padding: 14px 0;
+}
+.ticker-inner {
+  display: flex;
+  gap: 0;
+  animation: ticker 25s linear infinite;
+  white-space: nowrap;
+}
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 32px;
+  color: var(--text2);
+  font-size: 0.85rem;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.ticker-dot { width: 5px; height: 5px; border-radius: 50%; background: #6366f1; flex-shrink: 0; }
+
+/* ── PROBLEM ── */
+#problem { background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%); }
+.pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.pain-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.pain-card:hover { transform: translateY(-4px); border-color: rgba(239,68,68,0.3); }
+.pain-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ef4444, #f97316);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.pain-card:hover::before { opacity: 1; }
+.pain-emoji { font-size: 2rem; margin-bottom: 16px; }
+.pain-card h3 { font-size: 1.05rem; margin-bottom: 10px; color: var(--text); }
+.pain-card p { font-size: 0.88rem; color: var(--text2); line-height: 1.6; }
+
+/* ── SOLUTION ── */
+#solution { }
+.sol-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.sol-list { display: flex; flex-direction: column; gap: 20px; }
+.sol-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: all 0.3s;
+}
+.sol-item:hover { border-color: rgba(99,102,241,0.3); background: var(--surface2); }
+.sol-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: rgba(99,102,241,0.12);
+  border: 1px solid rgba(99,102,241,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+.sol-item h4 { font-size: 0.95rem; margin-bottom: 4px; }
+.sol-item p { font-size: 0.83rem; color: var(--text2); }
+.sol-visual {
+  position: relative;
+}
+.big-stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius2);
+  padding: 36px;
+  text-align: center;
+}
+.big-stat-card .num {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.big-stat-card .label { color: var(--text2); font-size: 1rem; }
+.mini-stats-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+.mini-stat {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+}
+.mini-stat .n { font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--text); }
+.mini-stat .l { font-size: 0.75rem; color: var(--text3); margin-top: 2px; }
+
+/* ── SERVICES ── */
+#services { background: var(--bg2); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.svc-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 32px 28px;
+  transition: all 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+.svc-card:hover { transform: translateY(-6px); border-color: rgba(99,102,241,0.4); box-shadow: 0 20px 60px rgba(99,102,241,0.1); }
+.svc-card.featured {
+  background: linear-gradient(135deg, rgba(99,102,241,0.12) 0%, rgba(139,92,246,0.08) 100%);
+  border-color: rgba(99,102,241,0.3);
+}
+.svc-icon-wrap {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+.svc-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+.svc-card p { font-size: 0.85rem; color: var(--text2); line-height: 1.6; margin-bottom: 16px; }
+.svc-tag {
+  display: inline-block;
+  background: rgba(99,102,241,0.12);
+  color: #a5b4fc;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+.svc-badge-popular {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: var(--grad);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+/* ── HOW IT WORKS ── */
+#how { }
+.steps-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  gap: 20px;
+  align-items: center;
+}
+.step-arrow { color: var(--text3); font-size: 1.4rem; flex-shrink: 0; }
+.step-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.step-card:hover { border-color: rgba(99,102,241,0.4); transform: translateY(-4px); }
+.step-num {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+  opacity: 0.4;
+}
+.step-icon { font-size: 2rem; margin-bottom: 12px; }
+.step-card h3 { font-size: 1rem; margin-bottom: 8px; }
+.step-card p { font-size: 0.82rem; color: var(--text2); line-height: 1.5; }
+
+/* ── TELEGRAM ── */
+#telegram {
+  background: linear-gradient(135deg, rgba(0,136,204,0.08) 0%, rgba(99,102,241,0.06) 100%);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.tg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.tg-features { display: flex; flex-direction: column; gap: 16px; }
+.tg-feature {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: all 0.3s;
+}
+.tg-feature:hover { border-color: rgba(0,136,204,0.3); }
+.tg-feature-icon {
+  width: 38px; height: 38px;
+  background: rgba(0,136,204,0.12);
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+.tg-feature h4 { font-size: 0.9rem; margin-bottom: 3px; }
+.tg-feature p { font-size: 0.8rem; color: var(--text2); }
+.tg-mockup {
+  background: #1a1a2e;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border2);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+.tg-header {
+  background: #0b1120;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.tg-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: var(--tg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+.tg-bot-name { font-size: 0.9rem; font-weight: 600; }
+.tg-bot-status { font-size: 0.72rem; color: var(--green); }
+.tg-msgs { padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.msg { max-width: 80%; }
+.msg-in {
+  background: rgba(0,136,204,0.15);
+  border: 1px solid rgba(0,136,204,0.2);
+  border-radius: 12px 12px 12px 3px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  align-self: flex-start;
+}
+.msg-out {
+  background: rgba(99,102,241,0.2);
+  border: 1px solid rgba(99,102,241,0.25);
+  border-radius: 12px 12px 3px 12px;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  align-self: flex-end;
+  margin-left: auto;
+}
+.msg-time { font-size: 0.65rem; color: var(--text3); margin-top: 4px; }
+
+/* ── DEMO ── */
+#demo { background: var(--bg2); }
+.demo-placeholder {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius2);
+  padding: 80px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.demo-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(99,102,241,0.05), transparent);
+}
+.play-btn {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--grad);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 40px rgba(99,102,241,0.4);
+  transition: transform 0.3s;
+  color: #fff;
+}
+.play-btn:hover { transform: scale(1.1); }
+.demo-placeholder h3 { font-size: 1.3rem; margin-bottom: 8px; }
+.demo-placeholder p { color: var(--text2); font-size: 0.9rem; }
+
+/* ── FREE PACK ── */
+#freepack {
+  background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(99,102,241,0.06));
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.freepack-card {
+  background: var(--surface2);
+  border: 1px solid rgba(16,185,129,0.25);
+  border-radius: var(--radius2);
+  padding: 50px 40px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.freepack-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #10b981, #3b82f6);
+}
+.pack-items { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+.pack-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--text2);
+}
+.pack-check { color: var(--green); font-size: 1rem; }
+.freepack-cta { flex-shrink: 0; text-align: center; }
+.freepack-cta .price-tag {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+.price-striked { text-decoration: line-through; color: var(--text3); margin-right: 4px; }
+
+/* ── COUNTDOWN ── */
+.urgency-bar {
+  background: linear-gradient(135deg, rgba(239,68,68,0.12), rgba(245,158,11,0.08));
+  border: 1px solid rgba(239,68,68,0.2);
+  border-radius: var(--radius);
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.urgency-text { font-weight: 600; font-size: 0.95rem; flex: 1; }
+.countdown-row { display: flex; gap: 8px; align-items: center; }
+.countdown-block {
+  background: rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 8px 12px;
+  text-align: center;
+  min-width: 50px;
+}
+.countdown-num {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #fbbf24;
+  line-height: 1;
+}
+.countdown-label { font-size: 0.6rem; color: var(--text3); text-transform: uppercase; margin-top: 2px; }
+.countdown-sep { font-size: 1.2rem; color: var(--text3); font-weight: 700; }
+
+/* ── PRICING ── */
+#pricing { }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.price-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 36px 28px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.price-card:hover { transform: translateY(-4px); }
+.price-card.popular {
+  background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(59,130,246,0.06));
+  border-color: rgba(99,102,241,0.35);
+  box-shadow: 0 0 50px rgba(99,102,241,0.12);
+}
+.popular-badge {
+  position: absolute;
+  top: 16px; right: 16px;
+  background: var(--grad);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+.price-plan { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); font-weight: 600; margin-bottom: 12px; }
+.price-amt {
+  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+.price-amt sup { font-size: 1.2rem; vertical-align: super; }
+.price-note { font-size: 0.78rem; color: var(--text3); margin-bottom: 24px; }
+.price-divider { height: 1px; background: var(--border); margin: 24px 0; }
+.price-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.price-features li {
+  display: flex;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--text2);
+}
+.price-features li span:first-child { color: var(--green); }
+.price-features li.na { color: var(--text3); }
+.price-features li.na span:first-child { color: var(--text3); }
+
+/* ── TESTIMONIALS ── */
+#testimonials { background: var(--bg2); }
+.testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.testi-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 28px;
+  transition: all 0.3s;
+}
+.testi-card:hover { border-color: rgba(99,102,241,0.25); transform: translateY(-3px); }
+.testi-stars { color: #f59e0b; font-size: 0.9rem; margin-bottom: 14px; }
+.testi-text { font-size: 0.9rem; color: var(--text2); line-height: 1.7; margin-bottom: 20px; font-style: italic; }
+.testi-author { display: flex; gap: 12px; align-items: center; }
+.testi-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+.testi-name { font-size: 0.88rem; font-weight: 600; }
+.testi-role { font-size: 0.75rem; color: var(--text3); }
+
+/* ── FAQ ── */
+#faq { }
+.faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 760px; margin: 0 auto; }
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+.faq-item.open { border-color: rgba(99,102,241,0.3); }
+.faq-q {
+  padding: 20px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  user-select: none;
+}
+.faq-q:hover { color: #a5b4fc; }
+.faq-icon { color: var(--text3); font-size: 0.9rem; transition: transform 0.3s; flex-shrink: 0; }
+.faq-item.open .faq-icon { transform: rotate(180deg); color: #a5b4fc; }
+.faq-a {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  padding: 0 24px;
+  font-size: 0.88rem;
+  color: var(--text2);
+  line-height: 1.7;
+}
+.faq-a.open { max-height: 200px; padding-bottom: 20px; }
+
+/* ── FORM ── */
+#contact { background: var(--bg2); }
+.form-card {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius2);
+  padding: 50px 44px;
+  max-width: 640px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+.form-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--grad);
+}
+.form-title { font-size: 1.7rem; margin-bottom: 8px; }
+.form-sub { font-size: 0.9rem; color: var(--text2); margin-bottom: 32px; }
+.field-group { display: flex; flex-direction: column; gap: 20px; margin-bottom: 24px; }
+.field label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text2);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.field input, .field textarea, .field select {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 14px 16px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+}
+.field input:focus, .field textarea:focus, .field select:focus {
+  border-color: rgba(99,102,241,0.5);
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.1);
+}
+.field textarea { resize: vertical; min-height: 100px; }
+.field input::placeholder, .field textarea::placeholder { color: var(--text3); }
+.field select option { background: #0b1120; color: var(--text); }
+.form-error { color: #f87171; font-size: 0.78rem; margin-top: 5px; display: none; }
+.form-error.show { display: block; }
+.form-success {
+  display: none;
+  text-align: center;
+  padding: 40px;
+}
+.form-success.show { display: block; }
+.success-icon { font-size: 3rem; margin-bottom: 16px; }
+.success-title { font-size: 1.4rem; margin-bottom: 8px; }
+.success-sub { color: var(--text2); font-size: 0.9rem; }
+.btn-full { width: 100%; justify-content: center; border-radius: 12px; padding: 16px; font-size: 1rem; }
+.trust-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.trust-item { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; color: var(--text3); }
+
+/* ── FOOTER ── */
+footer {
+  background: #030508;
+  border-top: 1px solid var(--border);
+  padding: 60px 0 32px;
+}
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 48px; }
+.footer-brand p { font-size: 0.85rem; color: var(--text3); line-height: 1.7; margin: 12px 0 20px; max-width: 280px; }
+.social-row { display: flex; gap: 10px; }
+.social-btn {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: var(--text2);
+  transition: all 0.2s;
+}
+.social-btn:hover { border-color: rgba(99,102,241,0.4); color: var(--text); background: var(--surface2); }
+.footer-col h4 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); font-weight: 600; margin-bottom: 16px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul a { color: var(--text2); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+.footer-col ul a:hover { color: var(--text); }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid var(--border); flex-wrap: wrap; gap: 12px; }
+.footer-bottom p { font-size: 0.8rem; color: var(--text3); }
+
+/* ── FLOATING TG ── */
+.float-tg {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  z-index: 900;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--tg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 4px 24px rgba(0,136,204,0.45);
+  transition: all 0.3s;
+  animation: floatBounce 3s ease-in-out infinite;
+}
+.float-tg:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,0.6); }
+@keyframes floatBounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+.float-tg svg { width: 28px; height: 28px; fill: #fff; }
+
+/* ── MOBILE STICKY CTA ── */
+.mobile-sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  padding: 12px 16px;
+  background: rgba(6,9,18,0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  z-index: 800;
+  gap: 10px;
+}
+
+/* ── SCROLL ANIMATION ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-up-d1 { transition-delay: 0.1s; }
+.fade-up-d2 { transition-delay: 0.2s; }
+.fade-up-d3 { transition-delay: 0.3s; }
+
+/* ── TRUST BAR ── */
+.trust-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-top: 60px;
+}
+.trust-bar-item { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--text2); font-weight: 500; }
+.trust-bar-icon { font-size: 1.2rem; }
+.trust-divider { width: 1px; height: 24px; background: var(--border); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual { order: -1; }
+  .sol-grid { grid-template-columns: 1fr; gap: 40px; }
+  .tg-grid { grid-template-columns: 1fr; gap: 40px; }
+  .freepack-card { grid-template-columns: 1fr; }
+  .freepack-cta { text-align: left; }
+  .steps-row { grid-template-columns: 1fr; }
+  .step-arrow { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+}
+@media (max-width: 600px) {
+  section { padding: 72px 0; }
+  .hero-cta-row { flex-direction: column; }
+  .hero-cta-row .btn { justify-content: center; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .form-card { padding: 32px 24px; }
+  .mobile-sticky-cta { display: flex; }
+  .float-tg { bottom: 80px; }
+  .hero-stats { gap: 24px; }
+  .trust-divider { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner container">
+    <a href="#" class="logo">Auto<span>Flow</span></a>
+    <ul class="nav-links">
+      <li><a href="#problem">Problem</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="https://t.me/yourbotusername?start=landing" target="_blank" class="nav-cta">Start on Telegram ↗</a></li>
+    </ul>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#problem" onclick="closeMenu()">Problem</a>
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#pricing" onclick="closeMenu()">Pricing</a>
+  <a href="#faq" onclick="closeMenu()">FAQ</a>
+  <a href="#contact" onclick="closeMenu()">Get Free Demo</a>
+  <a href="https://t.me/yourbotusername?start=landing" target="_blank" style="color:#0088cc; font-weight:600;">Start on Telegram →</a>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg">
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
+    <div class="hero-orb orb3"></div>
+  </div>
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="badge-row">
+          <span class="badge badge-red"><span class="pulse"></span> ⚡ Limited 10 Slots Today</span>
+          <span class="badge badge-green">✅ 100+ Users Automated</span>
+        </div>
+        <h1 class="hero-h1">
+          Automate Your Work<br>
+          &amp; Life in <span class="gradient-text">24 Hours 🚀</span>
+        </h1>
+        <p class="hero-sub">
+          No coding. No stress. Hum banate hain aapka full automation system —  n8n + Telegram Bot se. Sit back, relax, aur kaam apne aap ho jaye.
+        </p>
+        <div class="hero-cta-row">
+          <a href="https://t.me/yourbotusername?start=landing" target="_blank" class="btn btn-tg" aria-label="Start on Telegram bot">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.613c-.152.682-.555.849-1.126.528l-3.127-2.303-1.509 1.453c-.167.167-.307.307-.63.307l.224-3.18 5.783-5.223c.251-.224-.055-.348-.39-.124L7.56 14.285l-3.043-.951c-.661-.207-.674-.661.138-.977l11.896-4.588c.55-.199 1.031.134.911.479z"/></svg>
+            Start on Telegram
+          </a>
+          <a href="#contact" class="btn btn-primary" aria-label="Get free demo">
+            🎯 Get Free Demo
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">100+</div>
+            <div class="stat-label">Users Automated</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">24hrs</div>
+            <div class="stat-label">Delivery Time</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">₹499</div>
+            <div class="stat-label">Starting Price</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual fade-up">
+        <div class="hero-card">
+          <span class="floating-badge fb1">✅ Automation Active</span>
+          <div class="flow-nodes">
+            <div class="flow-node">
+              <div class="node-icon" style="background:rgba(0,136,204,0.15);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+              <div>
+                <div class="node-title">Telegram Bot Trigger</div>
+                <div class="node-sub">Message received → workflow starts</div>
+              </div>
+              <span class="node-status status-live">Live</span>
+            </div>
+            <div class="arrow-connector">↓</div>
+            <div class="flow-node">
+              <div class="node-icon" style="background:rgba(99,102,241,0.15);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div>
+              <div>
+                <div class="node-title">n8n Workflow Engine</div>
+                <div class="node-sub">Processing your business logic</div>
+              </div>
+              <span class="node-status status-live">Running</span>
+            </div>
+            <div class="arrow-connector">↓</div>
+            <div class="flow-node">
+              <div class="node-icon" style="background:rgba(16,185,129,0.15);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+              <div>
+                <div class="node-title">Google Sheets Update</div>
+                <div class="node-sub">Lead data saved automatically</div>
+              </div>
+              <span class="node-status status-done">Done</span>
+            </div>
+            <div class="arrow-connector">↓</div>
+            <div class="flow-node">
+              <div class="node-icon" style="background:rgba(245,158,11,0.15);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+              <div>
+                <div class="node-title">Auto Reply Sent</div>
+                <div class="node-sub">Customer notified instantly</div>
+              </div>
+              <span class="node-status status-done">Sent</span>
+            </div>
+          </div>
+          <span class="floating-badge fb2">⚡ 0.3s Response Time</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="trust-bar fade-up">
+      <div class="trust-bar-item"><span class="trust-bar-icon" style="display:inline-flex;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> Secure & Private</div>
+      <div class="trust-divider"></div>
+      <div class="trust-bar-item"><span class="trust-bar-icon" style="display:inline-flex;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span> 24hr Delivery</div>
+      <div class="trust-divider"></div>
+      <div class="trust-bar-item"><span class="trust-bar-icon" style="display:inline-flex;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span> Made for India</div>
+      <div class="trust-divider"></div>
+      <div class="trust-bar-item"><span class="trust-bar-icon" style="display:inline-flex;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span> Telegram Support</div>
+      <div class="trust-divider"></div>
+      <div class="trust-bar-item"><span class="trust-bar-icon" style="display:inline-flex;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg></span> n8n Powered</div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-inner">
+    <span class="ticker-item"><span class="ticker-dot"></span> Business Automation India</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> n8n Workflow Automation</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> Telegram Bot Integration</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> WhatsApp Alternative Automation</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> Freelancer Tools</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> Student Automation Systems</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> Daily Life Automation</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> No-Code Automation</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> Business Automation India</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> n8n Workflow Automation</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> Telegram Bot Integration</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> WhatsApp Alternative Automation</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> Freelancer Tools</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> Student Automation Systems</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> Daily Life Automation</span>
+    <span class="ticker-item"><span class="ticker-dot"></span> No-Code Automation</span>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-tag">😤 The Problem</span>
+      <h2 class="section-title">Yeh sab thaka deta hai, haina?</h2>
+      <p class="section-sub mx-auto">Aap hardworking hain — but manual, repetitive work aapko productive nahi hone deta. Yahi problem solve karte hain hum.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-card fade-up fade-up-d1">
+        <div class="pain-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5 2 4 2 4-2 4-2M9.5 9h.01M14.5 9h.01"/></svg></div>
+        <h3>Manual Work, Roz Roz</h3>
+        <p>Same copy-paste, same messages, same data entry — har roz, ghanton tak. Yeh koi zindagi hai?</p>
+      </div>
+      <div class="pain-card fade-up fade-up-d2">
+        <div class="pain-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+        <h3>Missed Follow-ups</h3>
+        <p>Customers ko time pe reply nahi milta. Leads gum ho jaate hain. Business suffer karta hai kyunki you're doing it all manually.</p>
+      </div>
+      <div class="pain-card fade-up fade-up-d3">
+        <div class="pain-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <h3>Time Waste on Low-Value Tasks</h3>
+        <p>Reports banana, spreadsheets update karna, reminders bhejana — yeh sab automation se ho sakta hai. Aap kyun kar rahe ho?</p>
+      </div>
+      <div class="pain-card fade-up fade-up-d1">
+        <div class="pain-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>Expensive Tools Abroad</h3>
+        <p>Zapier, Make, other tools — dollar pricing, monthly subscriptions. India ke liye affordable nahi. Hum ₹499 mein dete hain.</p>
+      </div>
+      <div class="pain-card fade-up fade-up-d2">
+        <div class="pain-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
+        <h3>Too Complex, Don't Know Where to Start</h3>
+        <p>Automation sunke lagta hai developer chahiye. Nahi. Hum sab set up karte hain — you just tell us what you need.</p>
+      </div>
+      <div class="pain-card fade-up fade-up-d3">
+        <div class="pain-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg></div>
+        <h3>Growth Stagnation</h3>
+        <p>Jab aap busy hote hain small tasks mein, business grow nahi kar sakta. Automation = freedom to grow.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section id="solution">
+  <div class="container">
+    <div class="sol-grid">
+      <div class="fade-up">
+        <span class="section-tag">✅ The Solution</span>
+        <h2 class="section-title">AutoFlow — Aapka Personal Automation System</h2>
+        <p class="section-sub">Hum n8n + Telegram Bot use karke aapka poora workflow automate karte hain. Ek baar set up, lifetime chalega.</p>
+        <div class="sol-list">
+          <div class="sol-item">
+            <div class="sol-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+            <div>
+              <h4>Save 3–5 Hours Every Day</h4>
+              <p>Jo kaam aap ghante karte the, ab seconds mein hoga automatically.</p>
+            </div>
+          </div>
+          <div class="sol-item">
+            <div class="sol-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+            <div>
+              <h4>Zero Human Error</h4>
+              <p>Automation never forgets, never makes mistakes. 100% accurate, har baar.</p>
+            </div>
+          </div>
+          <div class="sol-item">
+            <div class="sol-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
+            <div>
+              <h4>Scale Without Hiring</h4>
+              <p>Ek automation = ek virtual employee. No salary, no leaves, no excuses.</p>
+            </div>
+          </div>
+          <div class="sol-item">
+            <div class="sol-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 15h.01M16 15h.01"/></svg></div>
+            <div>
+              <h4>Telegram Bot — Always On</h4>
+              <p>24/7 auto-reply, lead capture, order management — sab kuch Telegram pe.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sol-visual fade-up fade-up-d2">
+        <div class="big-stat-card">
+          <div class="num">87%</div>
+          <div class="label">of our clients recover setup cost in first week</div>
+          <div class="mini-stats-row">
+            <div class="mini-stat">
+              <div class="n">3hrs</div>
+              <div class="l">Saved daily</div>
+            </div>
+            <div class="mini-stat">
+              <div class="n">100%</div>
+              <div class="l">Accuracy</div>
+            </div>
+            <div class="mini-stat">
+              <div class="n">24/7</div>
+              <div class="l">Bot Active</div>
+            </div>
+            <div class="mini-stat">
+              <div class="n">₹499</div>
+              <div class="l">Start Price</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-tag">🛠 Our Services</span>
+      <h2 class="section-title">Kya Automate Kar Sakte Hain Aap?</h2>
+      <p class="section-sub mx-auto">Har need ke liye ek automation — business se leke daily life tak.</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card featured fade-up fade-up-d1">
+        <span class="svc-badge-popular">🔥 Popular</span>
+        <div class="svc-icon-wrap" style="background:rgba(0,136,204,0.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Telegram Bot Automation</h3>
+        <p>WhatsApp ka behtareen alternative. Auto-reply, lead collection, order management, customer support — sab Telegram pe.</p>
+        <span class="svc-tag">n8n + Telegram API</span>
+      </div>
+      <div class="svc-card fade-up fade-up-d2">
+        <div class="svc-icon-wrap" style="background:rgba(99,102,241,0.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <h3>Business Automation</h3>
+        <p>Invoice banao, follow-up bhejo, leads track karo, team ko notify karo — sab kuch automatically.</p>
+        <span class="svc-tag">CRM + Sheets + Bot</span>
+      </div>
+      <div class="svc-card fade-up fade-up-d3">
+        <div class="svc-icon-wrap" style="background:rgba(16,185,129,0.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
+        <h3>Daily Life Automation</h3>
+        <p>Morning briefing, reminders, news updates, expense tracking — aapki life systematize ho jayegi.</p>
+        <span class="svc-tag">Personal + Productivity</span>
+      </div>
+      <div class="svc-card fade-up fade-up-d1">
+        <div class="svc-icon-wrap" style="background:rgba(245,158,11,0.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+        <h3>Student Automation System</h3>
+        <p>Assignment deadlines, study schedule, notes backup, college updates — sab ek jagah track karo.</p>
+        <span class="svc-tag">Student Life</span>
+      </div>
+      <div class="svc-card fade-up fade-up-d2">
+        <div class="svc-icon-wrap" style="background:rgba(239,68,68,0.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
+        <h3>Freelancer Toolkit</h3>
+        <p>Client onboarding, invoice reminders, project updates, portfolio automation — grow without stress.</p>
+        <span class="svc-tag">Freelancer Ready</span>
+      </div>
+      <div class="svc-card fade-up fade-up-d3">
+        <div class="svc-icon-wrap" style="background:rgba(168,85,247,0.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01M16 15.5v.01M12 12v.01"/></svg></div>
+        <h3>Content Creator System</h3>
+        <p>Content calendar, post scheduling notifications, analytics reports, brand deals tracker — creator ka best friend.</p>
+        <span class="svc-tag">Creator Economy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-tag">📋 Process</span>
+      <h2 class="section-title">Kaise Kaam Karta Hai?</h2>
+      <p class="section-sub mx-auto">3 simple steps mein aapka automation ready. 24 ghante mein deliver.</p>
+    </div>
+    <div class="steps-row">
+      <div class="step-card fade-up fade-up-d1">
+        <div class="step-num">01</div>
+        <div class="step-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Tell Us What to Automate</h3>
+        <p>Telegram ya form pe batao — kya problem hai, kya automate karna chahte ho. Simple conversation.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card fade-up fade-up-d2">
+        <div class="step-num">02</div>
+        <div class="step-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div>
+        <h3>We Build Your System</h3>
+        <p>Humare experts n8n mein aapka custom workflow banate hain + Telegram bot set up karte hain.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step-card fade-up fade-up-d3">
+        <div class="step-num">03</div>
+        <div class="step-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.8"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg></div>
+        <h3>Go Live in 24 Hours</h3>
+        <p>Aapka system test hota hai, demo milta hai, aur 24 ghante mein aap fully automated ho jaate ho!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TELEGRAM SECTION -->
+<section id="telegram">
+  <div class="container">
+    <div class="tg-grid">
+      <div class="fade-up">
+        <span class="section-tag" style="background:rgba(0,136,204,0.1);border-color:rgba(0,136,204,0.25);color:#7dd3fc;">💬 Telegram Integration</span>
+        <h2 class="section-title">Instant Reply, 24/7 — Telegram Bot Pe</h2>
+        <p class="section-sub">WhatsApp band ho sakta hai, but Telegram always works. Hum Telegram bot banate hain jo never sleeps.</p>
+        <div class="tg-features">
+          <div class="tg-feature">
+            <div class="tg-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+            <div>
+              <h4>Instant Auto-Reply</h4>
+              <p>Customer message bhejta hai → bot turant reply karta hai. No delays, no missed messages.</p>
+            </div>
+          </div>
+          <div class="tg-feature">
+            <div class="tg-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+            <div>
+              <h4>Lead Capture Automation</h4>
+              <p>Bot se directly lead info collect hoti hai → Google Sheets mein save ho jaata hai automatically.</p>
+            </div>
+          </div>
+          <div class="tg-feature">
+            <div class="tg-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
+            <div>
+              <h4>Smart Notifications</h4>
+              <p>New orders, payments, important alerts — sab kuch Telegram pe direct aata hai. No email lag.</p>
+            </div>
+          </div>
+          <div class="tg-feature">
+            <div class="tg-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+            <div>
+              <h4>Private & Secure</h4>
+              <p>Telegram end-to-end encryption ke saath aata hai. Aapka data safe rehta hai.</p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:28px;">
+          <a href="https://t.me/yourbotusername?start=landing" target="_blank" class="btn btn-tg" aria-label="Try Telegram bot now">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.613c-.152.682-.555.849-1.126.528l-3.127-2.303-1.509 1.453c-.167.167-.307.307-.63.307l.224-3.18 5.783-5.223c.251-.224-.055-.348-.39-.124L7.56 14.285l-3.043-.951c-.661-.207-.674-.661.138-.977l11.896-4.588c.55-.199 1.031.134.911.479z"/></svg>
+            Try Bot Now — Free
+          </a>
+        </div>
+      </div>
+      <div class="fade-up fade-up-d2">
+        <div class="tg-mockup">
+          <div class="tg-header">
+            <div class="tg-avatar"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 15h.01M16 15h.01"/></svg></div>
+            <div>
+              <div class="tg-bot-name">AutoFlow Bot</div>
+              <div class="tg-bot-status">● Online</div>
+            </div>
+          </div>
+          <div class="tg-msgs">
+            <div class="msg msg-in">
+              <div>Hi! I want to automate my business 🙏</div>
+              <div class="msg-time">10:32 AM</div>
+            </div>
+            <div class="msg msg-out">
+              <div>Namaste! 👋 Welcome to AutoFlow!<br><br>Main aapki help karta hoon. Kya aap:<br>1️⃣ Business automate karna chahte ho<br>2️⃣ Daily life organize karna chahte ho<br>3️⃣ Free demo chahiye?<br><br>Reply with number 👇</div>
+              <div class="msg-time">10:32 AM ✓✓</div>
+            </div>
+            <div class="msg msg-in">
+              <div>1</div>
+              <div class="msg-time">10:33 AM</div>
+            </div>
+            <div class="msg msg-out">
+              <div>🎯 Great choice! Business automation se aap roz 3-5 hours bachate ho.<br><br>Apna naam aur WhatsApp share karo, hum 10 mins mein call karte hain! 📞</div>
+              <div class="msg-time">10:33 AM ✓✓</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO -->
+<section id="demo">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-tag">🎥 Live Demo</span>
+      <h2 class="section-title">Dekho Kaise Kaam Karta Hai</h2>
+      <p class="section-sub mx-auto">Real automation in action — ek click se sab kuch ho jaata hai.</p>
+    </div>
+    <div class="demo-placeholder fade-up">
+      <button class="play-btn" onclick="alert('Video demo coming soon! Please contact us on Telegram for a live demo.')" aria-label="Play demo video">▶</button>
+      <h3>Watch 2-Minute Demo Video</h3>
+      <p>See how we automate a complete business workflow using n8n + Telegram Bot</p>
+      <div style="margin-top:24px;">
+        <a href="https://t.me/yourbotusername?start=landing" target="_blank" class="btn btn-tg" aria-label="Get live demo on Telegram">
+          Or Get Live Demo on Telegram →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE PACK -->
+<section id="freepack">
+  <div class="container">
+    <div class="freepack-card fade-up">
+      <div>
+        <span class="section-tag" style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.25);color:#6ee7b7;">🎁 Free Gift</span>
+        <h2 class="section-title" style="margin-bottom:12px;">Free Automation Starter Pack</h2>
+        <p style="color:var(--text2);font-size:0.95rem;margin-bottom:20px;">Aaj form fill karo aur paao yeh exclusive pack — bilkul free!</p>
+        <div class="pack-items">
+          <div class="pack-item"><span class="pack-check">✅</span> 10 Ready-to-Use n8n Workflow Templates</div>
+          <div class="pack-item"><span class="pack-check">✅</span> Telegram Bot Setup Guide (PDF)</div>
+          <div class="pack-item"><span class="pack-check">✅</span> Business Automation Checklist</div>
+          <div class="pack-item"><span class="pack-check">✅</span> 30-min Free Consultation Call</div>
+          <div class="pack-item"><span class="pack-check">✅</span> Exclusive Discord/Telegram Community Access</div>
+        </div>
+      </div>
+      <div class="freepack-cta">
+        <div class="price-tag">
+          <span class="price-striked">₹999</span> FREE 🎁
+        </div>
+        <a href="#contact" class="btn btn-primary" aria-label="Claim free automation pack">Claim Free Pack →</a>
+        <p style="font-size:0.75rem;color:var(--text3);margin-top:10px;">Only for first 50 signups</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-tag">💰 Pricing</span>
+      <h2 class="section-title">Simple, Transparent Pricing</h2>
+      <p class="section-sub mx-auto">India ke liye affordable rates. No hidden fees. One-time setup.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="price-card fade-up fade-up-d1">
+        <div class="price-plan">Starter</div>
+        <div class="price-amt" style="color:var(--text)"><sup>₹</sup>499</div>
+        <div class="price-note">One-time setup • Perfect for beginners</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><span>✅</span><span>1 Automation Workflow</span></li>
+          <li><span>✅</span><span>Basic Telegram Bot</span></li>
+          <li><span>✅</span><span>Google Sheets Integration</span></li>
+          <li><span>✅</span><span>24hr Delivery</span></li>
+          <li><span>✅</span><span>1 Week Support</span></li>
+          <li class="na"><span>—</span><span>Multiple Workflows</span></li>
+          <li class="na"><span>—</span><span>Custom Branding</span></li>
+        </ul>
+        <a href="https://t.me/yourbotusername?start=starter" target="_blank" class="btn btn-outline btn-full" aria-label="Start Starter plan">Get Started</a>
+      </div>
+      <div class="price-card popular fade-up fade-up-d2">
+        <span class="popular-badge">Most Popular</span>
+        <div class="price-plan" style="color:#a5b4fc;">Business</div>
+        <div class="price-amt" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"><sup>₹</sup>999</div>
+        <div class="price-note">One-time setup • Best for small businesses</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><span>✅</span><span>3 Automation Workflows</span></li>
+          <li><span>✅</span><span>Advanced Telegram Bot</span></li>
+          <li><span>✅</span><span>CRM + Sheets Integration</span></li>
+          <li><span>✅</span><span>Lead Capture System</span></li>
+          <li><span>✅</span><span>24hr Delivery</span></li>
+          <li><span>✅</span><span>1 Month Support</span></li>
+          <li><span>✅</span><span>Free Starter Pack</span></li>
+        </ul>
+        <a href="https://t.me/yourbotusername?start=business" target="_blank" class="btn btn-primary btn-full" aria-label="Start Business plan">Get This Plan 🚀</a>
+      </div>
+      <div class="price-card fade-up fade-up-d3">
+        <div class="price-plan">Full Stack</div>
+        <div class="price-amt" style="color:var(--text)"><sup>₹</sup>1,999</div>
+        <div class="price-note">One-time setup • For serious businesses</div>
+        <div class="price-divider"></div>
+        <ul class="price-features">
+          <li><span>✅</span><span>Unlimited Workflows</span></li>
+          <li><span>✅</span><span>Custom Telegram Bot</span></li>
+          <li><span>✅</span><span>Full Business Automation</span></li>
+          <li><span>✅</span><span>Payment Automation</span></li>
+          <li><span>✅</span><span>Custom Branding</span></li>
+          <li><span>✅</span><span>3 Months Priority Support</span></li>
+          <li><span>✅</span><span>Monthly Review Calls</span></li>
+        </ul>
+        <a href="https://t.me/yourbotusername?start=fullstack" target="_blank" class="btn btn-outline btn-full" aria-label="Start Full Stack plan">Go Full Stack</a>
+      </div>
+    </div>
+
+    <div class="urgency-bar fade-up">
+      <div>
+        <div class="urgency-text">🔥 Only <strong style="color:#fbbf24;" id="slots-left">7 slots</strong> remaining this week — hurry!</div>
+        <div style="font-size:0.8rem;color:var(--text3);margin-top:4px;">Prices go up after slots fill. Lock your rate now.</div>
+      </div>
+      <div class="countdown-row">
+        <div class="countdown-block">
+          <div class="countdown-num" id="cd-h">23</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-block">
+          <div class="countdown-num" id="cd-m">59</div>
+          <div class="countdown-label">Mins</div>
+        </div>
+        <span class="countdown-sep">:</span>
+        <div class="countdown-block">
+          <div class="countdown-num" id="cd-s">59</div>
+          <div class="countdown-label">Secs</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-tag">⭐ Reviews</span>
+      <h2 class="section-title">Log Kya Keh Rahe Hain?</h2>
+      <p class="section-sub mx-auto">Real users, real results. Yeh log pehle wahi problem face kar rahe the jo aap kar rahe ho.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card fade-up fade-up-d1">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Mera daily 4 ghante ka manual work ab 10 minutes mein ho jaata hai! AutoFlow ne meri life change kar di. Business automation really works!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(99,102,241,0.2);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div>
+            <div class="testi-name">Rahul Sharma</div>
+            <div class="testi-role">Small Business Owner, Delhi</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up fade-up-d2">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"As a freelancer, I was losing clients due to slow follow-ups. AutoFlow's Telegram bot now handles everything automatically. Revenue badh gaya 40%!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(16,185,129,0.2);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+          <div>
+            <div class="testi-name">Priya Das</div>
+            <div class="testi-role">Freelance Designer, Kolkata</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-up fade-up-d3">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text">"Student hoon, assignments aur deadlines manage karna mushkil tha. AutoFlow ka student system set up hua ₹499 mein — completely worth it yaar!"</p>
+        <div class="testi-author">
+          <div class="testi-avatar" style="background:rgba(245,158,11,0.2);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+          <div>
+            <div class="testi-name">Arif Khan</div>
+            <div class="testi-role">Engineering Student, Dhaka</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-tag">❓ FAQ</span>
+      <h2 class="section-title">Common Questions</h2>
+      <p class="section-sub mx-auto">Koi doubt? Yahan clear karo — ya Telegram pe directly poocho.</p>
+    </div>
+    <div class="faq-list fade-up">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Kya mujhe coding aani chahiye? <span class="faq-icon">▼</span></div>
+        <div class="faq-a">Bilkul nahi! Hum poora system aapke liye build karte hain. Aapko sirf batana hai kya chahiye — baaki sab hum handle karte hain. Zero technical knowledge required.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">24 ghante mein really deliver hota hai? <span class="faq-icon">▼</span></div>
+        <div class="faq-a">Haan! Most projects 12-24 ghante mein deliver hote hain. Complex projects ke liye 48 ghante tak ho sakta hai. Hum har step pe update dete hain Telegram pe.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">n8n kya hai? Yeh kaise kaam karta hai? <span class="faq-icon">▼</span></div>
+        <div class="faq-a">n8n ek powerful open-source automation tool hai — jaise Zapier ya Make, but more powerful aur affordable. Hum isko aapke server pe install karte hain, workflows banate hain, aur aapka Telegram bot connect karte hain.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Ek baar pay karna hoga ya monthly? <span class="faq-icon">▼</span></div>
+        <div class="faq-a">One-time setup fee hai. Koi monthly charge nahi. Aapka automation lifetime chalega. Sirf server hosting ka chhota monthly cost ho sakta hai (usually ₹200-500/month) jo directly aap pay karte ho server ko.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Kya meri data safe rahegi? <span class="faq-icon">▼</span></div>
+        <div class="faq-a">100% safe. Aapka data aapke apne server pe rehta hai. Hum kisi third party ko share nahi karte. Telegram end-to-end encrypted hai. n8n self-hosted hai — complete control aapke haath mein.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Support kaise milega? <span class="faq-icon">▼</span></div>
+        <div class="faq-a">Telegram pe directly available hain hum. Starter plan = 1 week support, Business = 1 month, Full Stack = 3 months priority support. Aur hum ek exclusive community mein add karte hain jahan future help milti rehti hai.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="contact">
+  <div class="container">
+    <div class="text-center fade-up">
+      <span class="section-tag">📩 Get Started</span>
+      <h2 class="section-title">Apna Automation Journey Shuru Karo</h2>
+      <p class="section-sub mx-auto">Form fill karo — 10 minutes mein hum Telegram pe aapko contact karenge.</p>
+    </div>
+    <div class="form-card fade-up">
+      <h3 class="form-title">🎯 Get Free Demo + Starter Pack</h3>
+      <p class="form-sub">Koi commitment nahi. Pehle demo dekho, phir decide karo.</p>
+      <div id="form-container">
+        <form id="leadForm" onsubmit="handleSubmit(event)" novalidate>
+          <div class="field-group">
+            <div class="field">
+              <label for="fname">Your Name *</label>
+              <input type="text" id="fname" name="name" placeholder="Aapka naam likhiye..." autocomplete="name" required>
+              <div class="form-error" id="err-name">Please enter your name.</div>
+            </div>
+            <div class="field">
+              <label for="fcontact">WhatsApp / Telegram Username *</label>
+              <input type="text" id="fcontact" name="contact" placeholder="e.g. +91 9876543210 or @yourusername" required>
+              <div class="form-error" id="err-contact">Please enter your WhatsApp or Telegram contact.</div>
+            </div>
+            <div class="field">
+              <label for="fservice">Service Interested In *</label>
+              <select id="fservice" name="service" required>
+                <option value="" disabled selected>Select what you need...</option>
+                <option value="business">Business Automation (₹999)</option>
+                <option value="telegram">Telegram Bot Setup (₹499)</option>
+                <option value="daily">Daily Life Automation (₹499)</option>
+                <option value="student">Student System (₹499)</option>
+                <option value="fullstack">Full Stack Automation (₹1999)</option>
+                <option value="custom">Custom — Not Sure Yet</option>
+              </select>
+              <div class="form-error" id="err-service">Please select a service.</div>
+            </div>
+            <div class="field">
+              <label for="fmessage">What Do You Want to Automate? *</label>
+              <textarea id="fmessage" name="message" placeholder="Example: Mujhe apna customer follow-up automate karna hai. Abhi manually Telegram pe message karta hoon — bahut time waste hota hai..." required></textarea>
+              <div class="form-error" id="err-message">Please describe what you want to automate.</div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn" aria-label="Submit lead form">
+            <span id="btn-text">🚀 Get Free Demo Now</span>
+          </button>
+        </form>
+        <div class="trust-row">
+          <span class="trust-item">🔒 100% Secure</span>
+          <span class="trust-item">📱 Telegram Response in 10 mins</span>
+          <span class="trust-item">🎁 Free Pack Included</span>
+        </div>
+      </div>
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">🎉</div>
+        <h3 class="success-title">Bahut Badhiya! Form Submit Ho Gaya!</h3>
+        <p class="success-sub">
+          Hum <strong>10 minutes mein</strong> aapko Telegram pe contact karenge.<br><br>
+          Meanwhile, aap direct Telegram bot pe bhi shuru kar sakte ho 👇
+        </p>
+        <div style="margin-top:24px;">
+          <a href="https://t.me/yourbotusername?start=landing" target="_blank" class="btn btn-tg" aria-label="Continue on Telegram bot">
+            Continue on Telegram →
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">Auto<span>Flow</span></a>
+        <p>India's leading n8n + Telegram Bot automation service. Automate your business and daily life in 24 hours. No coding required.</p>
+        <div class="social-row">
+          <a href="https://t.me/yourbotusername" target="_blank" class="social-btn" aria-label="Telegram"><svg width="16" height="16" viewBox="0 0 24 24" fill="#94a3b8"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.613c-.152.682-.555.849-1.126.528l-3.127-2.303-1.509 1.453c-.167.167-.307.307-.63.307l.224-3.18 5.783-5.223c.251-.224-.055-.348-.39-.124L7.56 14.285l-3.043-.951c-.661-.207-.674-.661.138-.977l11.896-4.588c.55-.199 1.031.134.911.479z"/></svg></a>
+          <a href="#" class="social-btn" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="social-btn" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
+          <a href="#" class="social-btn" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Business Automation</a></li>
+          <li><a href="#services">Telegram Bot</a></li>
+          <li><a href="#services">Daily Automation</a></li>
+          <li><a href="#services">Student System</a></li>
+          <li><a href="#services">Freelancer Kit</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Get Demo</a></li>
+          <li><a href="#freepack">Free Pack</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://t.me/yourbotusername" target="_blank">Telegram Bot</a></li>
+          <li><a href="mailto:hello@autoflow.in">hello@autoflow.in</a></li>
+          <li><a href="#">India / Bangladesh</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 AutoFlow India. All rights reserved. | Made with ❤️ for India & Bangladesh 🇮🇳🇧🇩</p>
+      <p style="color:var(--text3);font-size:0.75rem;">n8n + Telegram Bot Automation Service | automation service India</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING TELEGRAM BTN -->
+<a href="https://wa.me/919679435980?text=Hi%20AutoFlow!%20I%20want%20to%20know%20more%20about%20your%20automation%20services." target="_blank" class="float-tg" style="background:#25d366;box-shadow:0 4px 24px rgba(37,211,102,0.45);" aria-label="Chat on WhatsApp" title="Chat with us on WhatsApp">
+  <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-sticky-cta" id="mobileCta">
+  <a href="https://t.me/yourbotusername?start=landing" target="_blank" class="btn btn-tg" style="flex:1;justify-content:center;padding:12px;" aria-label="Telegram">Telegram →</a>
+  <a href="#contact" class="btn btn-primary" style="flex:1;justify-content:center;padding:12px;" aria-label="Free Demo">Free Demo</a>
+</div>
+
+<script>
+// ── NAVBAR SCROLL ──
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ── HAMBURGER ──
+function toggleMenu() {
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMenu() {
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+// ── SCROLL ANIMATIONS ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// ── FAQ ──
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const ans = item.querySelector('.faq-a');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-a').classList.remove('open');
+  });
+  if (!isOpen) {
+    item.classList.add('open');
+    ans.classList.add('open');
+  }
+}
+
+// ── COUNTDOWN ──
+(function() {
+  const end = Date.now() + (23 * 3600 + 47 * 60 + 33) * 1000;
+  function tick() {
+    const diff = Math.max(0, end - Date.now());
+    const h = Math.floor(diff / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    const pad = n => String(n).padStart(2, '0');
+    document.getElementById('cd-h').textContent = pad(h);
+    document.getElementById('cd-m').textContent = pad(m);
+    document.getElementById('cd-s').textContent = pad(s);
+    if (diff > 0) setTimeout(tick, 1000);
+  }
+  tick();
+})();
+
+// ── FORM SUBMIT ──
+async function handleSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById('fname').value.trim();
+  const contact = document.getElementById('fcontact').value.trim();
+  const service = document.getElementById('fservice').value;
+  const message = document.getElementById('fmessage').value.trim();
+  let valid = true;
+
+  const show = (id, show) => document.getElementById(id).classList.toggle('show', show);
+  show('err-name', !name); if (!name) valid = false;
+  show('err-contact', !contact); if (!contact) valid = false;
+  show('err-service', !service); if (!service) valid = false;
+  show('err-message', !message); if (!message) valid = false;
+
+  if (!valid) return;
+
+  const btn = document.getElementById('submitBtn');
+  const btnText = document.getElementById('btn-text');
+  btn.disabled = true;
+  btnText.textContent = 'Submitting...';
+
+  try {
+    // n8n Webhook URL — replace with your actual n8n webhook URL
+    const endpoint = 'https://YOUR-N8N-DOMAIN/webhook/autoflow-leads';
+    await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      mode: 'no-cors',
+      body: JSON.stringify({ name, contact, service, message, timestamp: new Date().toISOString(), source: 'autoflow-landing' })
+    });
+  } catch (err) {
+    // Continue to success even if webhook fails (no-cors means we can't check)
+    console.log('Form submitted');
+  }
+
+  document.getElementById('form-container').style.display = 'none';
+  document.getElementById('formSuccess').classList.add('show');
+}
+
+// ── SMOOTH ANCHOR ──
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+</body>
+</html>
