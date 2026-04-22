@@ -1113,6 +1113,7 @@ footer {
   .float-tg { bottom: 80px; }
   .hero-stats { gap: 24px; }
   .trust-divider { display: none; }
+  .form-card [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
 }
 </style>
 </head>
@@ -1770,33 +1771,53 @@ footer {
       <div id="form-container">
         <form id="leadForm" onsubmit="handleSubmit(event)" novalidate>
           <div class="field-group">
-            <div class="field">
-              <label for="fname">Your Name *</label>
-              <input type="text" id="fname" name="name" placeholder="Aapka naam likhiye..." autocomplete="name" required>
-              <div class="form-error" id="err-name">Please enter your name.</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div class="field">
+                <label for="fname">Your Name *</label>
+                <input type="text" id="fname" name="name" placeholder="Aapka naam..." autocomplete="name" required>
+                <div class="form-error" id="err-name">Name zaroori hai.</div>
+              </div>
+              <div class="field">
+                <label for="fphone">Phone Number *</label>
+                <input type="tel" id="fphone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" required>
+                <div class="form-error" id="err-phone">Phone number daalo.</div>
+              </div>
             </div>
-            <div class="field">
-              <label for="fcontact">WhatsApp / Telegram Username *</label>
-              <input type="text" id="fcontact" name="contact" placeholder="e.g. +91 9876543210 or @yourusername" required>
-              <div class="form-error" id="err-contact">Please enter your WhatsApp or Telegram contact.</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div class="field">
+                <label for="femail">Email Address</label>
+                <input type="email" id="femail" name="email" placeholder="aap@example.com" autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="fbudget">Your Budget *</label>
+                <select id="fbudget" name="budget" required>
+                  <option value="" disabled selected>Budget select karo...</option>
+                  <option value="Under ₹499">Under ₹499</option>
+                  <option value="₹499 - ₹999">₹499 - ₹999</option>
+                  <option value="₹999 - ₹1999">₹999 - ₹1999</option>
+                  <option value="₹1999+">₹1999+</option>
+                  <option value="Custom Budget">Custom Budget</option>
+                </select>
+                <div class="form-error" id="err-budget">Budget select karo.</div>
+              </div>
             </div>
             <div class="field">
               <label for="fservice">Service Interested In *</label>
               <select id="fservice" name="service" required>
                 <option value="" disabled selected>Select what you need...</option>
-                <option value="business">Business Automation (₹999)</option>
-                <option value="telegram">Telegram Bot Setup (₹499)</option>
-                <option value="daily">Daily Life Automation (₹499)</option>
-                <option value="student">Student System (₹499)</option>
-                <option value="fullstack">Full Stack Automation (₹1999)</option>
-                <option value="custom">Custom — Not Sure Yet</option>
+                <option value="Business Automation">Business Automation (₹999)</option>
+                <option value="Telegram Bot Setup">Telegram Bot Setup (₹499)</option>
+                <option value="Daily Life Automation">Daily Life Automation (₹499)</option>
+                <option value="Student System">Student System (₹499)</option>
+                <option value="Full Stack Automation">Full Stack Automation (₹1999)</option>
+                <option value="Custom">Custom — Not Sure Yet</option>
               </select>
-              <div class="form-error" id="err-service">Please select a service.</div>
+              <div class="form-error" id="err-service">Service select karo.</div>
             </div>
             <div class="field">
               <label for="fmessage">What Do You Want to Automate? *</label>
-              <textarea id="fmessage" name="message" placeholder="Example: Mujhe apna customer follow-up automate karna hai. Abhi manually Telegram pe message karta hoon — bahut time waste hota hai..." required></textarea>
-              <div class="form-error" id="err-message">Please describe what you want to automate.</div>
+              <textarea id="fmessage" name="message" placeholder="Example: Mujhe apna customer follow-up automate karna hai. Leads track karna hai. Telegram bot chahiye jo auto-reply kare..." required></textarea>
+              <div class="form-error" id="err-message">Kya automate karna hai, batao.</div>
             </div>
           </div>
           <button type="submit" class="btn btn-primary btn-full" id="submitBtn" aria-label="Submit lead form">
@@ -1953,15 +1974,18 @@ function toggleFaq(el) {
 // ── FORM SUBMIT ──
 async function handleSubmit(e) {
   e.preventDefault();
-  const name = document.getElementById('fname').value.trim();
-  const contact = document.getElementById('fcontact').value.trim();
+  const name    = document.getElementById('fname').value.trim();
+  const phone   = document.getElementById('fphone').value.trim();
+  const email   = document.getElementById('femail').value.trim();
+  const budget  = document.getElementById('fbudget').value;
   const service = document.getElementById('fservice').value;
   const message = document.getElementById('fmessage').value.trim();
   let valid = true;
 
-  const show = (id, show) => document.getElementById(id).classList.toggle('show', show);
-  show('err-name', !name); if (!name) valid = false;
-  show('err-contact', !contact); if (!contact) valid = false;
+  const show = (id, v) => document.getElementById(id).classList.toggle('show', v);
+  show('err-name',    !name);    if (!name)    valid = false;
+  show('err-phone',   !phone);   if (!phone)   valid = false;
+  show('err-budget',  !budget);  if (!budget)  valid = false;
   show('err-service', !service); if (!service) valid = false;
   show('err-message', !message); if (!message) valid = false;
 
@@ -1973,30 +1997,36 @@ async function handleSubmit(e) {
   btnText.textContent = 'Submitting...';
 
   try {
-    // n8n Webhook URL — replace with your actual n8n webhook URL
     const endpoint = 'https://n8n1-1fep.onrender.com/webhook/autoflow-leads';
-    await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      mode: 'no-cors',
-      body: JSON.stringify({
-        lead: {
-          full_name: name,
-          email: '',
-          phone: contact,
-          company: '',
-          budget: '',
-          service: service,
-          source: 'AutoFlow Landing Page',
-          status: 'new'
-        },
-        message: message,
-        timestamp: new Date().toLocaleString('en-IN', {timeZone: 'Asia/Kolkata'})
-      })
-    });
+    const payload = {
+      full_name : name,
+      phone     : phone,
+      email     : email,
+      budget    : budget,
+      service   : service,
+      message   : message,
+      source    : 'AutoFlow Website',
+      status    : 'new',
+      timestamp : new Date().toLocaleString('en-IN', {timeZone: 'Asia/Kolkata'})
+    };
+    try {
+      // Try normal fetch first (works if n8n has CORS enabled)
+      await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } catch(e) {
+      // Fallback: text/plain bypasses CORS preflight
+      await fetch(endpoint, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(payload)
+      });
+    }
   } catch (err) {
-    // Continue to success even if webhook fails (no-cors means we can't check)
-    console.log('Form submitted');
+    console.log('Webhook error:', err);
   }
 
   document.getElementById('form-container').style.display = 'none';
