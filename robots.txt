@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://autoflow-five-psi.vercel.app/sitemap.xml
+
+# Block nothing — let Google index everything
+Disallow:

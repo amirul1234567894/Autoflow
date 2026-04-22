@@ -5,9 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AutoFlow – Automate Your Work & Life in 24 Hours | n8n + Telegram Bot India</title>
 <meta name="description" content="India's #1 automation service using n8n + Telegram Bot. Automate your business, daily tasks & workflows. No coding needed. Starting ₹499. 100+ users automated. Get free demo today!">
-<meta name="keywords" content="automation service India, n8n automation, Telegram bot automation, business automation India, WhatsApp alternative automation, workflow automation Bangladesh, no-code automation">
+<meta name="keywords" content="automation service India, n8n automation, Telegram bot automation, business automation India, WhatsApp alternative automation, workflow automation Bangladesh, no-code automation, business automation Kolkata, freelancer automation tools, student productivity automation, daily life automation India, cheap automation service, n8n workflow India">
 <meta name="robots" content="index, follow">
 <meta name="author" content="AutoFlow India">
+<!-- Google Search Console Verification — replace with your actual code -->
+<meta name="google-site-verification" content="YOUR_GOOGLE_VERIFICATION_CODE_HERE" />
+<!-- Bing Webmaster Verification -->
+<meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE_HERE" />
 <meta property="og:title" content="AutoFlow – Automate Your Work & Life in 24 Hours 🚀">
 <meta property="og:description" content="No coding. No stress. We build your automation system for you. n8n + Telegram Bot Integration. Starting ₹499.">
 <meta property="og:type" content="website">
@@ -1151,7 +1155,7 @@ footer {
         </div>
         <h1 class="hero-h1">
           Automate Your Work<br>
-          &amp; Life in <span class="gradient-text">24 Hours 🚀</span>
+          &amp; Life in <span class="gradient-text">24 Hours</span>
         </h1>
         <p class="hero-sub">
           No coding. No stress. Hum banate hain aapka full automation system —  n8n + Telegram Bot se. Sit back, relax, aur kaam apne aap ho jaye.
@@ -1957,7 +1961,7 @@ async function handleSubmit(e) {
 
   try {
     // n8n Webhook URL — replace with your actual n8n webhook URL
-    const endpoint = 'https://YOUR-N8N-DOMAIN/webhook/autoflow-leads';
+    const endpoint = 'https://n8n1-1fep.onrender.com/webhook/autoflow-leads';
     await fetch(endpoint, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -1984,5 +1988,104 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 </script>
+<!-- AI CHATBOT WIDGET -->
+<div id="ai-chat-widget" style="position:fixed;bottom:90px;left:20px;z-index:950;">
+  <button id="chat-toggle" onclick="toggleChat()" style="width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#6366f1);border:none;cursor:pointer;box-shadow:0 4px 20px rgba(99,102,241,0.4);display:flex;align-items:center;justify-content:center;transition:all 0.3s;" title="Chat with AI Assistant">
+    <svg id="chat-icon-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <svg id="chat-icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <div id="chat-box" style="display:none;position:absolute;bottom:64px;left:0;width:320px;background:#0b1120;border:1px solid rgba(255,255,255,0.12);border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+    <div style="background:linear-gradient(135deg,#3b82f6,#6366f1);padding:14px 18px;display:flex;align-items:center;gap:10px;">
+      <div style="width:32px;height:32px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4M8 15h.01M16 15h.01"/></svg>
+      </div>
+      <div>
+        <div style="font-size:0.85rem;font-weight:700;color:#fff;font-family:Arial;">AutoFlow AI</div>
+        <div style="font-size:0.7rem;color:rgba(255,255,255,0.7);">● Online — Powered by Qwen AI</div>
+      </div>
+    </div>
+    <div id="chat-messages" style="height:260px;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth;">
+      <div class="ai-msg" style="background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.2);border-radius:12px 12px 12px 3px;padding:10px 13px;font-size:0.82rem;color:#e2e8f0;max-width:85%;line-height:1.5;">
+        Namaste! I'm AutoFlow AI. Ask me anything about automation, n8n, Telegram bots, or our services! 😊
+      </div>
+    </div>
+    <div style="padding:12px;border-top:1px solid rgba(255,255,255,0.06);display:flex;gap:8px;">
+      <input id="chat-input" type="text" placeholder="Ask about automation..." onkeydown="if(event.key==='Enter')sendChat()" style="flex:1;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:9px 14px;color:#f1f5f9;font-size:0.82rem;outline:none;font-family:'DM Sans',sans-serif;" />
+      <button onclick="sendChat()" style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#6366f1);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleChat() {
+  const box = document.getElementById('chat-box');
+  const iconOpen = document.getElementById('chat-icon-open');
+  const iconClose = document.getElementById('chat-icon-close');
+  const isOpen = box.style.display !== 'none';
+  box.style.display = isOpen ? 'none' : 'block';
+  iconOpen.style.display = isOpen ? 'flex' : 'none';
+  iconClose.style.display = isOpen ? 'none' : 'flex';
+}
+
+function addMsg(text, isUser) {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.style.cssText = isUser
+    ? 'background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.25);border-radius:12px 12px 3px 12px;padding:10px 13px;font-size:0.82rem;color:#e2e8f0;max-width:85%;align-self:flex-end;margin-left:auto;line-height:1.5;'
+    : 'background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.2);border-radius:12px 12px 12px 3px;padding:10px 13px;font-size:0.82rem;color:#e2e8f0;max-width:85%;line-height:1.5;';
+  div.textContent = text;
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+function addTyping() {
+  const msgs = document.getElementById('chat-messages');
+  const div = document.createElement('div');
+  div.id = 'typing-indicator';
+  div.style.cssText = 'background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.2);border-radius:12px 12px 12px 3px;padding:10px 13px;font-size:0.82rem;color:#94a3b8;max-width:85%;line-height:1.5;';
+  div.textContent = 'Typing...';
+  msgs.appendChild(div);
+  msgs.scrollTop = msgs.scrollHeight;
+}
+
+async function sendChat() {
+  const input = document.getElementById('chat-input');
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = '';
+  addMsg(text, true);
+  addTyping();
+
+  const systemPrompt = `You are AutoFlow AI assistant for AutoFlow India — a business and daily life automation service using n8n + Telegram Bot. 
+Services: Business Automation (₹999), Telegram Bot Setup (₹499), Daily Life Automation (₹499), Full Stack (₹1999).
+Answer in simple English or Hinglish. Be helpful, friendly, concise. Always guide users to contact on WhatsApp: +919679435980 or fill the form for free demo.
+If asked about pricing, mention all 3 plans. Keep answers short (2-4 sentences max).`;
+
+  try {
+    const res = await fetch('https://amirul12345-my-ollama-server.hf.space/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'qwen2.5:1.5b-instruct',
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: text }
+        ],
+        stream: false
+      })
+    });
+    const data = await res.json();
+    document.getElementById('typing-indicator')?.remove();
+    const reply = data?.message?.content || data?.choices?.[0]?.message?.content || "Sorry, kuch problem hua. WhatsApp pe contact karo: +919679435980";
+    addMsg(reply, false);
+  } catch (err) {
+    document.getElementById('typing-indicator')?.remove();
+    addMsg('Connection issue. Please contact us on WhatsApp: +919679435980', false);
+  }
+}
+</script>
+
 </body>
 </html>
