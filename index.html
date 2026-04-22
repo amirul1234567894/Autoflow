@@ -46,6 +46,9 @@
 }
 </script>
 
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b82f6'/%3E%3Cpath d='M8 16 L14 22 L24 10' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b82f6'/%3E%3Cpath d='M8 16 L14 22 L24 10' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -318,10 +321,11 @@ nav.scrolled {
   background: var(--surface2);
   border: 1px solid var(--border2);
   border-radius: var(--radius2);
-  padding: 28px;
+  padding: 32px 28px 32px;
+  margin-top: 20px;
   backdrop-filter: blur(20px);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 .hero-card::before {
   content: '';
@@ -388,8 +392,8 @@ nav.scrolled {
   font-weight: 600;
   white-space: nowrap;
 }
-.fb1 { top: -16px; right: 20px; }
-.fb2 { bottom: -16px; left: 20px; }
+.fb1 { top: -14px; right: 16px; font-size:0.72rem; padding:6px 12px; }
+.fb2 { bottom: -14px; left: 16px; font-size:0.72rem; padding:6px 12px; }
 
 /* ── SECTIONS ── */
 section { padding: 100px 0; position: relative; }
@@ -1886,6 +1890,15 @@ footer {
 </div>
 
 <script>
+// ── DISABLE VIEW SOURCE / INSPECT ──
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('keydown', function(e) {
+  // Block F12, Ctrl+U, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+  if (e.key === 'F12') { e.preventDefault(); return false; }
+  if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
+  if (e.ctrlKey && e.shiftKey && ['i','I','j','J','c','C'].includes(e.key)) { e.preventDefault(); return false; }
+});
+
 // ── NAVBAR SCROLL ──
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
@@ -1966,7 +1979,20 @@ async function handleSubmit(e) {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       mode: 'no-cors',
-      body: JSON.stringify({ name, contact, service, message, timestamp: new Date().toISOString(), source: 'autoflow-landing' })
+      body: JSON.stringify({
+        lead: {
+          full_name: name,
+          email: '',
+          phone: contact,
+          company: '',
+          budget: '',
+          service: service,
+          source: 'AutoFlow Landing Page',
+          status: 'new'
+        },
+        message: message,
+        timestamp: new Date().toLocaleString('en-IN', {timeZone: 'Asia/Kolkata'})
+      })
     });
   } catch (err) {
     // Continue to success even if webhook fails (no-cors means we can't check)
@@ -2001,7 +2027,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       </div>
       <div>
         <div style="font-size:0.85rem;font-weight:700;color:#fff;font-family:Arial;">AutoFlow AI</div>
-        <div style="font-size:0.7rem;color:rgba(255,255,255,0.7);">● Online — Powered by Qwen AI</div>
+        <div style="font-size:0.7rem;color:rgba(255,255,255,0.7);">● Online — AutoFlow Assistant</div>
       </div>
     </div>
     <div id="chat-messages" style="height:260px;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth;">
