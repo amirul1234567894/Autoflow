@@ -814,7 +814,7 @@ section { padding: 100px 0; position: relative; }
 
 /* ── PRICING ── */
 #pricing { }
-.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: start; }
 .price-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -822,14 +822,22 @@ section { padding: 100px 0; position: relative; }
   padding: 36px 28px;
   position: relative;
   overflow: hidden;
-  transition: all 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
-.price-card:hover { transform: translateY(-4px); }
+.price-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(99,102,241,0.1); }
 .price-card.popular {
-  background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(59,130,246,0.06));
-  border-color: rgba(99,102,241,0.35);
-  box-shadow: 0 0 50px rgba(99,102,241,0.12);
+  background: linear-gradient(160deg, rgba(99,102,241,0.14), rgba(59,130,246,0.07));
+  border-color: rgba(99,102,241,0.45);
+  box-shadow: 0 0 60px rgba(99,102,241,0.15);
 }
+.price-card.popular::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #3b82f6, #6366f1, #8b5cf6);
+}
+.price-card.popular:hover { box-shadow: 0 28px 80px rgba(99,102,241,0.22); }
 .popular-badge {
   position: absolute;
   top: 16px; right: 16px;
@@ -839,6 +847,10 @@ section { padding: 100px 0; position: relative; }
   font-weight: 700;
   padding: 4px 12px;
   border-radius: 20px;
+}
+@keyframes badgePulse {
+  0%,100% { box-shadow: 0 4px 14px rgba(245,158,11,0.4); }
+  50% { box-shadow: 0 4px 22px rgba(245,158,11,0.65); }
 }
 .price-plan { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); font-weight: 600; margin-bottom: 12px; }
 .price-amt {
@@ -1594,61 +1606,95 @@ footer {
 <section id="pricing">
   <div class="container">
     <div class="text-center fade-up">
-      <span class="section-tag">💰 Pricing</span>
-      <h2 class="section-title">Simple, Transparent Pricing</h2>
-      <p class="section-sub mx-auto">India ke liye affordable rates. No hidden fees. One-time setup.</p>
+      <span class="section-tag">💰 Investment Plans</span>
+      <h2 class="section-title">Build Your Automation System Today</h2>
+      <p class="section-sub mx-auto">One-time setup cost to launch your system. Includes system maintenance &amp; automation monitoring to keep everything running 24/7 — without you lifting a finger.</p>
     </div>
     <div class="pricing-grid">
+
+      <!-- STARTER -->
       <div class="price-card fade-up fade-up-d1">
         <div class="price-plan">Starter</div>
-        <div class="price-amt" style="color:var(--text)"><sup>₹</sup>499</div>
-        <div class="price-note">One-time setup • Perfect for beginners</div>
+        <div class="price-note" style="font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--text3);font-weight:700;margin-bottom:8px;">Setup Cost</div>
+        <div class="price-amt" style="color:var(--text)"><sup>₹</sup>999</div>
+        <div style="display:inline-flex;align-items:center;gap:6px;font-size:0.76rem;color:#86efac;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.18);border-radius:20px;padding:4px 10px;margin-bottom:18px;font-weight:600;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#10b981;animation:pulse 1.8s infinite;flex-shrink:0;display:inline-block;"></span>
+          + ₹199/mo system maintenance
+        </div>
+        <p style="font-size:0.8rem;color:var(--text3);line-height:1.5;margin-bottom:4px;">Perfect for freelancers &amp; solopreneurs starting their automation journey.</p>
         <div class="price-divider"></div>
         <ul class="price-features">
-          <li><span>✅</span><span>1 Automation Workflow</span></li>
-          <li><span>✅</span><span>Basic Telegram Bot</span></li>
-          <li><span>✅</span><span>Google Sheets Integration</span></li>
-          <li><span>✅</span><span>24hr Delivery</span></li>
-          <li><span>✅</span><span>1 Week Support</span></li>
+          <li><span>✅</span><span>1 Smart Automation Workflow</span></li>
+          <li><span>✅</span><span>Telegram Bot Setup &amp; Integration</span></li>
+          <li><span>✅</span><span>Google Sheets Auto-Sync</span></li>
+          <li><span>✅</span><span>24-Hour Delivery Guarantee</span></li>
+          <li><span>✅</span><span>2 Weeks Onboarding Support</span></li>
+          <li><span>✅</span><span>Running cost covers uptime &amp; updates</span></li>
           <li class="na"><span>—</span><span>Multiple Workflows</span></li>
-          <li class="na"><span>—</span><span>Custom Branding</span></li>
+          <li class="na"><span>—</span><span>Lead Capture CRM</span></li>
         </ul>
-        <a href="https://t.me/Autoflow_897?start=starter" target="_blank" class="btn btn-outline btn-full" aria-label="Start Starter plan">Get Started</a>
+        <a href="https://t.me/Autoflow_897?start=starter" target="_blank" class="btn btn-outline btn-full" aria-label="Start automation - Starter plan">Start Automation →</a>
       </div>
-      <div class="price-card popular fade-up fade-up-d2">
-        <span class="popular-badge">Most Popular</span>
+
+      <!-- BUSINESS (MOST POPULAR) -->
+      <div class="price-card popular fade-up fade-up-d2" style="margin-top:-14px;padding-top:44px;padding-bottom:36px;">
+        <span class="popular-badge" style="background:linear-gradient(135deg,#f59e0b,#ef4444);box-shadow:0 4px 16px rgba(245,158,11,0.4);animation:badgePulse 2.5s ease-in-out infinite;">🔥 Most Popular</span>
         <div class="price-plan" style="color:#a5b4fc;">Business</div>
-        <div class="price-amt" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"><sup>₹</sup>999</div>
-        <div class="price-note">One-time setup • Best for small businesses</div>
-        <div class="price-divider"></div>
+        <div class="price-note" style="font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:#818cf8;font-weight:700;margin-bottom:8px;">Setup Cost</div>
+        <div class="price-amt" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"><sup>₹</sup>1,999</div>
+        <div style="display:inline-flex;align-items:center;gap:6px;font-size:0.76rem;color:#86efac;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.18);border-radius:20px;padding:4px 10px;margin-bottom:18px;font-weight:600;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#10b981;animation:pulse 1.8s infinite;flex-shrink:0;display:inline-block;"></span>
+          + ₹399/mo automation monitoring
+        </div>
+        <p style="font-size:0.8rem;color:var(--text2);line-height:1.5;margin-bottom:4px;">For growing businesses ready to automate leads, follow-ups &amp; sales — fully hands-free.</p>
+        <div class="price-divider" style="background:rgba(99,102,241,0.25);"></div>
         <ul class="price-features">
-          <li><span>✅</span><span>3 Automation Workflows</span></li>
-          <li><span>✅</span><span>Advanced Telegram Bot</span></li>
-          <li><span>✅</span><span>CRM + Sheets Integration</span></li>
-          <li><span>✅</span><span>Lead Capture System</span></li>
-          <li><span>✅</span><span>24hr Delivery</span></li>
-          <li><span>✅</span><span>1 Month Support</span></li>
-          <li><span>✅</span><span>Free Starter Pack</span></li>
+          <li><span>✅</span><span>5 Advanced Automation Workflows</span></li>
+          <li><span>✅</span><span>AI-Powered Telegram Bot</span></li>
+          <li><span>✅</span><span>Full CRM + Sheets Integration</span></li>
+          <li><span>✅</span><span>Lead Capture &amp; Auto Follow-Up</span></li>
+          <li><span>✅</span><span>24-Hour Priority Delivery</span></li>
+          <li><span>✅</span><span>2 Months Dedicated Support</span></li>
+          <li><span>✅</span><span>Support &amp; updates included in running cost</span></li>
+          <li><span>✅</span><span>Free Automation Starter Pack 🎁</span></li>
         </ul>
-        <a href="https://t.me/Autoflow_897?start=business" target="_blank" class="btn btn-primary btn-full" aria-label="Start Business plan">Get This Plan 🚀</a>
+        <a href="https://t.me/Autoflow_897?start=business" target="_blank" class="btn btn-primary btn-full" style="background:linear-gradient(135deg,#3b82f6,#6366f1,#8b5cf6);box-shadow:0 6px 28px rgba(99,102,241,0.4);" aria-label="Automate my business - Business plan">Automate My Business 🚀</a>
       </div>
+
+      <!-- FULL STACK -->
       <div class="price-card fade-up fade-up-d3">
         <div class="price-plan">Full Stack</div>
-        <div class="price-amt" style="color:var(--text)"><sup>₹</sup>1,999</div>
-        <div class="price-note">One-time setup • For serious businesses</div>
+        <div class="price-note" style="font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--text3);font-weight:700;margin-bottom:8px;">Setup Cost</div>
+        <div class="price-amt" style="color:var(--text)"><sup>₹</sup>4,999<span style="font-size:1rem;color:var(--text3);font-weight:600;">+</span></div>
+        <div style="display:inline-flex;align-items:center;gap:6px;font-size:0.76rem;color:#86efac;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.18);border-radius:20px;padding:4px 10px;margin-bottom:18px;font-weight:600;">
+          <span style="width:6px;height:6px;border-radius:50%;background:#10b981;animation:pulse 1.8s infinite;flex-shrink:0;display:inline-block;"></span>
+          + ₹799/mo premium support &amp; updates
+        </div>
+        <p style="font-size:0.8rem;color:var(--text3);line-height:1.5;margin-bottom:4px;">For serious businesses that need full automation infrastructure — built, managed &amp; scaled.</p>
         <div class="price-divider"></div>
         <ul class="price-features">
-          <li><span>✅</span><span>Unlimited Workflows</span></li>
-          <li><span>✅</span><span>Custom Telegram Bot</span></li>
-          <li><span>✅</span><span>Full Business Automation</span></li>
-          <li><span>✅</span><span>Payment Automation</span></li>
-          <li><span>✅</span><span>Custom Branding</span></li>
-          <li><span>✅</span><span>3 Months Priority Support</span></li>
-          <li><span>✅</span><span>Monthly Review Calls</span></li>
+          <li><span>✅</span><span>Unlimited Custom Workflows</span></li>
+          <li><span>✅</span><span>Fully Branded Telegram Bot System</span></li>
+          <li><span>✅</span><span>End-to-End Business Automation</span></li>
+          <li><span>✅</span><span>Payment &amp; Invoice Automation</span></li>
+          <li><span>✅</span><span>Custom Branding &amp; White-Label</span></li>
+          <li><span>✅</span><span>6 Months Priority Support</span></li>
+          <li><span>✅</span><span>Monthly Strategy &amp; Review Calls</span></li>
+          <li><span>✅</span><span>99.9% uptime — premium system guarantee</span></li>
         </ul>
-        <a href="https://t.me/Autoflow_897?start=fullstack" target="_blank" class="btn btn-outline btn-full" aria-label="Start Full Stack plan">Go Full Stack</a>
+        <a href="https://t.me/Autoflow_897?start=fullstack" target="_blank" class="btn btn-outline btn-full" style="border-color:rgba(139,92,246,0.4);color:#c4b5fd;" aria-label="Get full system - Full Stack plan">Get Full System ⚡</a>
       </div>
+
     </div>
+
+    <!-- Urgency line -->
+    <p style="text-align:center;font-size:0.85rem;color:#fbbf24;font-weight:600;margin-top:32px;" class="fade-up">⚡ Limited client slots — pricing may increase soon. Lock your rate now.</p>
+
+    <!-- Disclaimer -->
+    <p style="text-align:center;font-size:0.76rem;color:var(--text3);margin-top:14px;line-height:1.7;max-width:620px;margin-left:auto;margin-right:auto;" class="fade-up">
+      All plans include a one-time setup fee. The small ongoing running cost covers system maintenance, automation monitoring &amp; continuous updates — your system stays alive and optimized without any effort from your side.
+      <a href="https://t.me/Autoflow_897" target="_blank" style="color:#818cf8;text-decoration:none;"> Questions? Chat with us →</a>
+    </p>
 
     <div class="urgency-bar fade-up">
       <div>
