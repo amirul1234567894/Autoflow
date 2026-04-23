@@ -5,7 +5,7 @@
 <meta name="google-site-verification" content="m1uzNxzSzxL2R9a_wvh1OQazvN68VQB98Q0HU4GKK0U" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AutoFlow – Automate Your Work & Life in 24 Hours | n8n + Telegram Bot India</title>
-<meta name="description" content="India's #1 automation service using n8n + Telegram Bot. Automate your business, daily tasks & workflows. No coding needed. Starting ₹499. 100+ users automated. Get free demo today!">
+<meta name="description" content="India's #1 automation service using n8n + Telegram Bot. Automate your business, daily tasks & workflows. No coding needed. Starting ₹999. 100+ businesses automated. Get your free demo today!">
 <meta name="keywords" content="automation service India, n8n automation, Telegram bot automation, business automation India, WhatsApp alternative automation, workflow automation Bangladesh, no-code automation, business automation Kolkata, freelancer automation tools, student productivity automation, daily life automation India, cheap automation service, n8n workflow India">
 <meta name="robots" content="index, follow">
 <meta name="author" content="AutoFlow India">
@@ -14,7 +14,7 @@
 <!-- Bing Webmaster Verification -->
 <meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE_HERE" />
 <meta property="og:title" content="AutoFlow – Automate Your Work & Life in 24 Hours 🚀">
-<meta property="og:description" content="No coding. No stress. We build your automation system for you. n8n + Telegram Bot Integration. Starting ₹499.">
+<meta property="og:description" content="No coding. No stress. We build your automation system for you. n8n + Telegram Bot Integration. Starting ₹999.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://autoflow.in">
 <link rel="canonical" href="https://autoflow.in">
@@ -32,16 +32,16 @@
     "@type": "PostalAddress",
     "addressCountry": "IN"
   },
-  "priceRange": "₹499 - ₹1999",
+  "priceRange": "₹999 - ₹4999",
   "serviceType": "Business Automation, n8n Automation, Telegram Bot Integration",
   "areaServed": ["India", "Bangladesh"],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Automation Services",
     "itemListElement": [
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Starter Automation"}, "price": "499", "priceCurrency": "INR"},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business Automation"}, "price": "999", "priceCurrency": "INR"},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Full Stack Automation"}, "price": "1999", "priceCurrency": "INR"}
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Starter Automation"}, "price": "4999", "priceCurrency": "INR"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business Automation"}, "price": "4999", "priceCurrency": "INR"},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Full Stack Automation"}, "price": "4999", "priceCurrency": "INR"}
     ]
   }
 }
@@ -80,6 +80,21 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── CONTENT PROTECTION ── */
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+input, textarea, select {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+img { pointer-events: none; -webkit-user-drag: none; user-drag: none; }
 
 html { scroll-behavior: smooth; font-size: 16px; }
 
@@ -301,8 +316,8 @@ nav.scrolled {
 }
 .btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,255,255,0.2); }
 
-.hero-stats { display: flex; gap: 36px; flex-wrap: wrap; }
-.stat-item { }
+.hero-stats { display: flex; gap: 36px; flex-wrap: wrap; justify-content: center; }
+.stat-item { text-align: center; }
 .stat-num {
   font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 1.6rem;
@@ -814,7 +829,7 @@ section { padding: 100px 0; position: relative; }
 
 /* ── PRICING ── */
 #pricing { }
-.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; align-items: start; }
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
 .price-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -822,22 +837,14 @@ section { padding: 100px 0; position: relative; }
   padding: 36px 28px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  transition: all 0.3s;
 }
-.price-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(99,102,241,0.1); }
+.price-card:hover { transform: translateY(-4px); }
 .price-card.popular {
-  background: linear-gradient(160deg, rgba(99,102,241,0.14), rgba(59,130,246,0.07));
-  border-color: rgba(99,102,241,0.45);
-  box-shadow: 0 0 60px rgba(99,102,241,0.15);
+  background: linear-gradient(135deg, rgba(99,102,241,0.12), rgba(59,130,246,0.06));
+  border-color: rgba(99,102,241,0.35);
+  box-shadow: 0 0 50px rgba(99,102,241,0.12);
 }
-.price-card.popular::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #3b82f6, #6366f1, #8b5cf6);
-}
-.price-card.popular:hover { box-shadow: 0 28px 80px rgba(99,102,241,0.22); }
 .popular-badge {
   position: absolute;
   top: 16px; right: 16px;
@@ -847,10 +854,6 @@ section { padding: 100px 0; position: relative; }
   font-weight: 700;
   padding: 4px 12px;
   border-radius: 20px;
-}
-@keyframes badgePulse {
-  0%,100% { box-shadow: 0 4px 14px rgba(245,158,11,0.4); }
-  50% { box-shadow: 0 4px 22px rgba(245,158,11,0.65); }
 }
 .price-plan { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); font-weight: 600; margin-bottom: 12px; }
 .price-amt {
@@ -1141,6 +1144,7 @@ footer {
       <li><a href="#services">Services</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="blog.html">Blog</a></li>
       <li><a href="https://t.me/Autoflow_897?start=landing" target="_blank" class="nav-cta">Start on Telegram ↗</a></li>
     </ul>
     <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
@@ -1154,6 +1158,7 @@ footer {
   <a href="#pricing" onclick="closeMenu()">Pricing</a>
   <a href="#faq" onclick="closeMenu()">FAQ</a>
   <a href="#contact" onclick="closeMenu()">Get Free Demo</a>
+  <a href="blog.html" onclick="closeMenu()">Blog</a>
   <a href="https://t.me/Autoflow_897?start=landing" target="_blank" style="color:#0088cc; font-weight:600;">Start on Telegram →</a>
 </div>
 
@@ -1176,7 +1181,7 @@ footer {
           &amp; Life in <span class="gradient-text">24 Hours</span>
         </h1>
         <p class="hero-sub">
-          No coding. No stress. Hum banate hain aapka full automation system —  n8n + Telegram Bot se. Sit back, relax, aur kaam apne aap ho jaye.
+          No coding. No stress. We build your complete automation system — n8n + Telegram Bot. Sit back, relax, and let your work run on autopilot.
         </p>
         <div class="hero-cta-row">
           <a href="https://t.me/Autoflow_897?start=landing" target="_blank" class="btn btn-tg" aria-label="Start on Telegram bot">
@@ -1197,7 +1202,7 @@ footer {
             <div class="stat-label">Delivery Time</div>
           </div>
           <div class="stat-item">
-            <div class="stat-num">₹499</div>
+            <div class="stat-num">₹999</div>
             <div class="stat-label">Starting Price</div>
           </div>
         </div>
@@ -1250,7 +1255,7 @@ footer {
     <div class="trust-bar fade-up">
       <div class="trust-bar-item"><span class="trust-bar-icon" style="display:inline-flex;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span> Secure & Private</div>
       <div class="trust-divider"></div>
-      <div class="trust-bar-item"><span class="trust-bar-icon" style="display:inline-flex;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span> 24hr Delivery</div>
+      <div class="trust-bar-item"><span class="trust-bar-icon" style="display:inline-flex;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span> 24-Hour Delivery Guarantee</div>
       <div class="trust-divider"></div>
       <div class="trust-bar-item"><span class="trust-bar-icon" style="display:inline-flex;align-items:center;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span> Made for India</div>
       <div class="trust-divider"></div>
@@ -1288,39 +1293,39 @@ footer {
   <div class="container">
     <div class="text-center fade-up">
       <span class="section-tag">😤 The Problem</span>
-      <h2 class="section-title">Yeh sab thaka deta hai, haina?</h2>
-      <p class="section-sub mx-auto">Aap hardworking hain — but manual, repetitive work aapko productive nahi hone deta. Yahi problem solve karte hain hum.</p>
+      <h2 class="section-title">All of This Is Exhausting, Isn't It?</h2>
+      <p class="section-sub mx-auto">You work hard — but manual, repetitive tasks are holding you back from real growth. That's exactly the problem AutoFlow solves.</p>
     </div>
     <div class="pain-grid">
       <div class="pain-card fade-up fade-up-d1">
         <div class="pain-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M8 15s1.5 2 4 2 4-2 4-2M9.5 9h.01M14.5 9h.01"/></svg></div>
         <h3>Manual Work, Roz Roz</h3>
-        <p>Same copy-paste, same messages, same data entry — har roz, ghanton tak. Yeh koi zindagi hai?</p>
+        <p>Same copy-paste, same messages, same data entry — every single day, for hours. There's a better way.</p>
       </div>
       <div class="pain-card fade-up fade-up-d2">
         <div class="pain-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
         <h3>Missed Follow-ups</h3>
-        <p>Customers ko time pe reply nahi milta. Leads gum ho jaate hain. Business suffer karta hai kyunki you're doing it all manually.</p>
+        <p>Customers don't get timely replies. Leads fall through the cracks. Your business suffers because everything depends on you doing it manually.</p>
       </div>
       <div class="pain-card fade-up fade-up-d3">
         <div class="pain-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
         <h3>Time Waste on Low-Value Tasks</h3>
-        <p>Reports banana, spreadsheets update karna, reminders bhejana — yeh sab automation se ho sakta hai. Aap kyun kar rahe ho?</p>
+        <p>Creating reports, updating spreadsheets, sending reminders — all of this can be automated. Why are you still doing it yourself?</p>
       </div>
       <div class="pain-card fade-up fade-up-d1">
         <div class="pain-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <h3>Expensive Tools Abroad</h3>
-        <p>Zapier, Make, other tools — dollar pricing, monthly subscriptions. India ke liye affordable nahi. Hum ₹499 mein dete hain.</p>
+        <p>Zapier, Make, other tools charge in dollars with expensive subscriptions — not built for India. We start at ₹999 with a one-time setup.</p>
       </div>
       <div class="pain-card fade-up fade-up-d2">
         <div class="pain-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div>
         <h3>Too Complex, Don't Know Where to Start</h3>
-        <p>Automation sunke lagta hai developer chahiye. Nahi. Hum sab set up karte hain — you just tell us what you need.</p>
+        <p>Automation sounds technical and complex. It doesn't have to be. We handle everything — you just tell us what you want to automate.</p>
       </div>
       <div class="pain-card fade-up fade-up-d3">
         <div class="pain-emoji"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg></div>
         <h3>Growth Stagnation</h3>
-        <p>Jab aap busy hote hain small tasks mein, business grow nahi kar sakta. Automation = freedom to grow.</p>
+        <p>When you're stuck doing small tasks, your business can't grow. Automation gives you the freedom to focus on what actually matters.</p>
       </div>
     </div>
   </div>
@@ -1332,14 +1337,14 @@ footer {
     <div class="sol-grid">
       <div class="fade-up">
         <span class="section-tag">✅ The Solution</span>
-        <h2 class="section-title">AutoFlow — Aapka Personal Automation System</h2>
+        <h2 class="section-title">AutoFlow — Your Personal Automation System</h2>
         <p class="section-sub">Hum n8n + Telegram Bot use karke aapka poora workflow automate karte hain. Ek baar set up, lifetime chalega.</p>
         <div class="sol-list">
           <div class="sol-item">
             <div class="sol-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
             <div>
               <h4>Save 3–5 Hours Every Day</h4>
-              <p>Jo kaam aap ghante karte the, ab seconds mein hoga automatically.</p>
+              <p>Work that used to take hours now happens in seconds — completely automatically.</p>
             </div>
           </div>
           <div class="sol-item">
@@ -1368,7 +1373,7 @@ footer {
       <div class="sol-visual fade-up fade-up-d2">
         <div class="big-stat-card">
           <div class="num">87%</div>
-          <div class="label">of our clients recover setup cost in first week</div>
+          <div class="label">of our clients recover the setup cost within the first week</div>
           <div class="mini-stats-row">
             <div class="mini-stat">
               <div class="n">3hrs</div>
@@ -1383,7 +1388,7 @@ footer {
               <div class="l">Bot Active</div>
             </div>
             <div class="mini-stat">
-              <div class="n">₹499</div>
+              <div class="n">₹999</div>
               <div class="l">Start Price</div>
             </div>
           </div>
@@ -1398,8 +1403,8 @@ footer {
   <div class="container">
     <div class="text-center fade-up">
       <span class="section-tag">🛠 Our Services</span>
-      <h2 class="section-title">Kya Automate Kar Sakte Hain Aap?</h2>
-      <p class="section-sub mx-auto">Har need ke liye ek automation — business se leke daily life tak.</p>
+      <h2 class="section-title">What Can You Automate With AutoFlow?</h2>
+      <p class="section-sub mx-auto">A custom automation solution for every need — from business workflows to daily life systems.</p>
     </div>
     <div class="services-grid">
       <div class="svc-card featured fade-up fade-up-d1">
@@ -1412,31 +1417,31 @@ footer {
       <div class="svc-card fade-up fade-up-d2">
         <div class="svc-icon-wrap" style="background:rgba(99,102,241,0.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
         <h3>Business Automation</h3>
-        <p>Invoice banao, follow-up bhejo, leads track karo, team ko notify karo — sab kuch automatically.</p>
+        <p>Create invoices, send follow-ups, track leads, and notify your team — all running automatically in the background.</p>
         <span class="svc-tag">CRM + Sheets + Bot</span>
       </div>
       <div class="svc-card fade-up fade-up-d3">
         <div class="svc-icon-wrap" style="background:rgba(16,185,129,0.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.8"><circle cx="12" cy="12" r="5"/><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></div>
         <h3>Daily Life Automation</h3>
-        <p>Morning briefing, reminders, news updates, expense tracking — aapki life systematize ho jayegi.</p>
+        <p>Morning briefings, smart reminders, news digests, expense tracking — get your entire life systematized on autopilot.</p>
         <span class="svc-tag">Personal + Productivity</span>
       </div>
       <div class="svc-card fade-up fade-up-d1">
         <div class="svc-icon-wrap" style="background:rgba(245,158,11,0.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
         <h3>Student Automation System</h3>
-        <p>Assignment deadlines, study schedule, notes backup, college updates — sab ek jagah track karo.</p>
+        <p>Assignment deadlines, study schedules, notes backup, college updates — track everything in one place, automatically.</p>
         <span class="svc-tag">Student Life</span>
       </div>
       <div class="svc-card fade-up fade-up-d2">
         <div class="svc-icon-wrap" style="background:rgba(239,68,68,0.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div>
         <h3>Freelancer Toolkit</h3>
-        <p>Client onboarding, invoice reminders, project updates, portfolio automation — grow without stress.</p>
+        <p>Client onboarding, invoice reminders, project updates, portfolio automation — grow your freelance business without the stress.</p>
         <span class="svc-tag">Freelancer Ready</span>
       </div>
       <div class="svc-card fade-up fade-up-d3">
         <div class="svc-icon-wrap" style="background:rgba(168,85,247,0.12);"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="1.8"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5"/><path d="M8.5 8.5v.01M16 15.5v.01M12 12v.01"/></svg></div>
         <h3>Content Creator System</h3>
-        <p>Content calendar, post scheduling notifications, analytics reports, brand deals tracker — creator ka best friend.</p>
+        <p>Content calendar, post scheduling notifications, analytics reports, brand deals tracker — the ultimate system for creators.</p>
         <span class="svc-tag">Creator Economy</span>
       </div>
     </div>
@@ -1448,29 +1453,29 @@ footer {
   <div class="container">
     <div class="text-center fade-up">
       <span class="section-tag">📋 Process</span>
-      <h2 class="section-title">Kaise Kaam Karta Hai?</h2>
-      <p class="section-sub mx-auto">3 simple steps mein aapka automation ready. 24 ghante mein deliver.</p>
+      <h2 class="section-title">How Does It Work?</h2>
+      <p class="section-sub mx-auto">Your automation system is ready in 3 simple steps. Delivered within 24 hours.</p>
     </div>
     <div class="steps-row">
       <div class="step-card fade-up fade-up-d1">
         <div class="step-num">01</div>
         <div class="step-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.8"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <h3>Tell Us What to Automate</h3>
-        <p>Telegram ya form pe batao — kya problem hai, kya automate karna chahte ho. Simple conversation.</p>
+        <p>Tell us on Telegram or via the form — what's your problem, what do you want automated. A simple 5-minute conversation.</p>
       </div>
       <div class="step-arrow">→</div>
       <div class="step-card fade-up fade-up-d2">
         <div class="step-num">02</div>
         <div class="step-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div>
         <h3>We Build Your System</h3>
-        <p>Humare experts n8n mein aapka custom workflow banate hain + Telegram bot set up karte hain.</p>
+        <p>Our experts build your custom n8n workflow and set up your Telegram bot — fully configured and tested.</p>
       </div>
       <div class="step-arrow">→</div>
       <div class="step-card fade-up fade-up-d3">
         <div class="step-num">03</div>
         <div class="step-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.8"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg></div>
         <h3>Go Live in 24 Hours</h3>
-        <p>Aapka system test hota hai, demo milta hai, aur 24 ghante mein aap fully automated ho jaate ho!</p>
+        <p>Your system is tested, you receive a full demo, and within 24 hours you're completely automated and live!</p>
       </div>
     </div>
   </div>
@@ -1482,35 +1487,35 @@ footer {
     <div class="tg-grid">
       <div class="fade-up">
         <span class="section-tag" style="background:rgba(0,136,204,0.1);border-color:rgba(0,136,204,0.25);color:#7dd3fc;">💬 Telegram Integration</span>
-        <h2 class="section-title">Instant Reply, 24/7 — Telegram Bot Pe</h2>
-        <p class="section-sub">WhatsApp band ho sakta hai, but Telegram always works. Hum Telegram bot banate hain jo never sleeps.</p>
+        <h2 class="section-title">Instant Reply, 24/7 — Powered by Telegram Bot</h2>
+        <p class="section-sub">WhatsApp can get blocked or restricted, but Telegram always works. We build your Telegram bot that never sleeps — 24/7/365.</p>
         <div class="tg-features">
           <div class="tg-feature">
             <div class="tg-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
             <div>
               <h4>Instant Auto-Reply</h4>
-              <p>Customer message bhejta hai → bot turant reply karta hai. No delays, no missed messages.</p>
+              <p>Customer sends a message → the bot replies instantly. Zero delays, zero missed conversations.</p>
             </div>
           </div>
           <div class="tg-feature">
             <div class="tg-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
             <div>
               <h4>Lead Capture Automation</h4>
-              <p>Bot se directly lead info collect hoti hai → Google Sheets mein save ho jaata hai automatically.</p>
+              <p>Lead info is collected directly through the bot → automatically saved to Google Sheets in real time.</p>
             </div>
           </div>
           <div class="tg-feature">
             <div class="tg-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
             <div>
               <h4>Smart Notifications</h4>
-              <p>New orders, payments, important alerts — sab kuch Telegram pe direct aata hai. No email lag.</p>
+              <p>New orders, payments, important alerts — everything arrives directly on Telegram. No email delays.</p>
             </div>
           </div>
           <div class="tg-feature">
             <div class="tg-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
             <div>
               <h4>Private & Secure</h4>
-              <p>Telegram end-to-end encryption ke saath aata hai. Aapka data safe rehta hai.</p>
+              <p>Telegram comes with end-to-end encryption. Your data and your customers' data stays completely safe.</p>
             </div>
           </div>
         </div>
@@ -1536,7 +1541,7 @@ footer {
               <div class="msg-time">10:32 AM</div>
             </div>
             <div class="msg msg-out">
-              <div>Namaste! 👋 Welcome to AutoFlow!<br><br>Main aapki help karta hoon. Kya aap:<br>1️⃣ Business automate karna chahte ho<br>2️⃣ Daily life organize karna chahte ho<br>3️⃣ Free demo chahiye?<br><br>Reply with number 👇</div>
+              <div>Hello! 👋 Welcome to AutoFlow!<br><br>I'm here to help. Are you looking to:<br>1️⃣ Automate your business<br>2️⃣ Organize your daily life<br>3️⃣ Get a free demo?<br><br>Reply with a number 👇</div>
               <div class="msg-time">10:32 AM ✓✓</div>
             </div>
             <div class="msg msg-in">
@@ -1559,16 +1564,16 @@ footer {
   <div class="container">
     <div class="text-center fade-up">
       <span class="section-tag">🎥 Live Demo</span>
-      <h2 class="section-title">Dekho Kaise Kaam Karta Hai</h2>
-      <p class="section-sub mx-auto">Real automation in action — ek click se sab kuch ho jaata hai.</p>
+      <h2 class="section-title">See It In Action</h2>
+      <p class="section-sub mx-auto">Real automation in action — watch a complete business workflow run automatically.</p>
     </div>
     <div class="demo-placeholder fade-up">
       <button class="play-btn" onclick="alert('Video demo coming soon! Please contact us on Telegram for a live demo.')" aria-label="Play demo video">▶</button>
-      <h3>Watch 2-Minute Demo Video</h3>
-      <p>See how we automate a complete business workflow using n8n + Telegram Bot</p>
+      <h3>Watch the 2-Minute Demo Video</h3>
+      <p>See how we automate a complete business workflow from lead capture to follow-up — using n8n + Telegram Bot</p>
       <div style="margin-top:24px;">
         <a href="https://t.me/Autoflow_897?start=landing" target="_blank" class="btn btn-tg" aria-label="Get live demo on Telegram">
-          Or Get Live Demo on Telegram →
+          Get a Live Demo on Telegram →
         </a>
       </div>
     </div>
@@ -1582,13 +1587,13 @@ footer {
       <div>
         <span class="section-tag" style="background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.25);color:#6ee7b7;">🎁 Free Gift</span>
         <h2 class="section-title" style="margin-bottom:12px;">Free Automation Starter Pack</h2>
-        <p style="color:var(--text2);font-size:0.95rem;margin-bottom:20px;">Aaj form fill karo aur paao yeh exclusive pack — bilkul free!</p>
+        <p style="color:var(--text2);font-size:0.95rem;margin-bottom:20px;">Fill the form today and receive this exclusive starter pack — completely free!</p>
         <div class="pack-items">
           <div class="pack-item"><span class="pack-check">✅</span> 10 Ready-to-Use n8n Workflow Templates</div>
           <div class="pack-item"><span class="pack-check">✅</span> Telegram Bot Setup Guide (PDF)</div>
           <div class="pack-item"><span class="pack-check">✅</span> Business Automation Checklist</div>
           <div class="pack-item"><span class="pack-check">✅</span> 30-min Free Consultation Call</div>
-          <div class="pack-item"><span class="pack-check">✅</span> Exclusive Discord/Telegram Community Access</div>
+          <div class="pack-item"><span class="pack-check">✅</span> Exclusive Telegram Community Access</div>
         </div>
       </div>
       <div class="freepack-cta">
@@ -1596,7 +1601,7 @@ footer {
           <span class="price-striked">₹999</span> FREE 🎁
         </div>
         <a href="#contact" class="btn btn-primary" aria-label="Claim free automation pack">Claim Free Pack →</a>
-        <p style="font-size:0.75rem;color:var(--text3);margin-top:10px;">Only for first 50 signups</p>
+        <p style="font-size:0.75rem;color:var(--text3);margin-top:10px;">Available for the first 50 sign-ups only</p>
       </div>
     </div>
   </div>
@@ -1608,98 +1613,64 @@ footer {
     <div class="text-center fade-up">
       <span class="section-tag">💰 Investment Plans</span>
       <h2 class="section-title">Build Your Automation System Today</h2>
-      <p class="section-sub mx-auto">One-time setup cost to launch your system. Includes system maintenance &amp; automation monitoring to keep everything running 24/7 — without you lifting a finger.</p>
+      <p class="section-sub mx-auto">One-time setup cost to launch your system. Includes system maintenance & automation monitoring to keep everything running 24/7.</p>
     </div>
     <div class="pricing-grid">
-
-      <!-- STARTER -->
       <div class="price-card fade-up fade-up-d1">
         <div class="price-plan">Starter</div>
-        <div class="price-note" style="font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--text3);font-weight:700;margin-bottom:8px;">Setup Cost</div>
         <div class="price-amt" style="color:var(--text)"><sup>₹</sup>999</div>
-        <div style="display:inline-flex;align-items:center;gap:6px;font-size:0.76rem;color:#86efac;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.18);border-radius:20px;padding:4px 10px;margin-bottom:18px;font-weight:600;">
-          <span style="width:6px;height:6px;border-radius:50%;background:#10b981;animation:pulse 1.8s infinite;flex-shrink:0;display:inline-block;"></span>
-          + ₹199/mo system maintenance
-        </div>
-        <p style="font-size:0.8rem;color:var(--text3);line-height:1.5;margin-bottom:4px;">Perfect for freelancers &amp; solopreneurs starting their automation journey.</p>
+        <div class="price-note">Setup fee · Perfect for freelancers & solopreneurs</div>
         <div class="price-divider"></div>
         <ul class="price-features">
           <li><span>✅</span><span>1 Smart Automation Workflow</span></li>
-          <li><span>✅</span><span>Telegram Bot Setup &amp; Integration</span></li>
+          <li><span>✅</span><span>Telegram Bot Setup & Integration</span></li>
           <li><span>✅</span><span>Google Sheets Auto-Sync</span></li>
           <li><span>✅</span><span>24-Hour Delivery Guarantee</span></li>
           <li><span>✅</span><span>2 Weeks Onboarding Support</span></li>
-          <li><span>✅</span><span>Running cost covers uptime &amp; updates</span></li>
           <li class="na"><span>—</span><span>Multiple Workflows</span></li>
-          <li class="na"><span>—</span><span>Lead Capture CRM</span></li>
+          <li class="na"><span>—</span><span>Custom Branding</span></li>
         </ul>
-        <a href="https://t.me/Autoflow_897?start=starter" target="_blank" class="btn btn-outline btn-full" aria-label="Start automation - Starter plan">Start Automation →</a>
+        <a href="https://t.me/Autoflow_897?start=starter" target="_blank" class="btn btn-outline btn-full" aria-label="Start Starter plan">Start Automation →</a>
       </div>
-
-      <!-- BUSINESS (MOST POPULAR) -->
-      <div class="price-card popular fade-up fade-up-d2" style="margin-top:-14px;padding-top:44px;padding-bottom:36px;">
-        <span class="popular-badge" style="background:linear-gradient(135deg,#f59e0b,#ef4444);box-shadow:0 4px 16px rgba(245,158,11,0.4);animation:badgePulse 2.5s ease-in-out infinite;">🔥 Most Popular</span>
+      <div class="price-card popular fade-up fade-up-d2">
+        <span class="popular-badge">🔥 Most Popular</span>
         <div class="price-plan" style="color:#a5b4fc;">Business</div>
-        <div class="price-note" style="font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:#818cf8;font-weight:700;margin-bottom:8px;">Setup Cost</div>
         <div class="price-amt" style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"><sup>₹</sup>1,999</div>
-        <div style="display:inline-flex;align-items:center;gap:6px;font-size:0.76rem;color:#86efac;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.18);border-radius:20px;padding:4px 10px;margin-bottom:18px;font-weight:600;">
-          <span style="width:6px;height:6px;border-radius:50%;background:#10b981;animation:pulse 1.8s infinite;flex-shrink:0;display:inline-block;"></span>
-          + ₹399/mo automation monitoring
-        </div>
-        <p style="font-size:0.8rem;color:var(--text2);line-height:1.5;margin-bottom:4px;">For growing businesses ready to automate leads, follow-ups &amp; sales — fully hands-free.</p>
-        <div class="price-divider" style="background:rgba(99,102,241,0.25);"></div>
+        <div class="price-note">Setup fee · Best for growing businesses</div>
+        <div class="price-divider"></div>
         <ul class="price-features">
           <li><span>✅</span><span>5 Advanced Automation Workflows</span></li>
           <li><span>✅</span><span>AI-Powered Telegram Bot</span></li>
           <li><span>✅</span><span>Full CRM + Sheets Integration</span></li>
-          <li><span>✅</span><span>Lead Capture &amp; Auto Follow-Up</span></li>
-          <li><span>✅</span><span>24-Hour Priority Delivery</span></li>
+          <li><span>✅</span><span>Lead Capture & Auto Follow-Up</span></li>
+          <li><span>✅</span><span>24-Hour Delivery Guarantee</span></li>
           <li><span>✅</span><span>2 Months Dedicated Support</span></li>
-          <li><span>✅</span><span>Support &amp; updates included in running cost</span></li>
           <li><span>✅</span><span>Free Automation Starter Pack 🎁</span></li>
         </ul>
-        <a href="https://t.me/Autoflow_897?start=business" target="_blank" class="btn btn-primary btn-full" style="background:linear-gradient(135deg,#3b82f6,#6366f1,#8b5cf6);box-shadow:0 6px 28px rgba(99,102,241,0.4);" aria-label="Automate my business - Business plan">Automate My Business 🚀</a>
+        <a href="https://t.me/Autoflow_897?start=business" target="_blank" class="btn btn-primary btn-full" aria-label="Start Business plan">Automate My Business 🚀</a>
       </div>
-
-      <!-- FULL STACK -->
       <div class="price-card fade-up fade-up-d3">
         <div class="price-plan">Full Stack</div>
-        <div class="price-note" style="font-size:0.7rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--text3);font-weight:700;margin-bottom:8px;">Setup Cost</div>
         <div class="price-amt" style="color:var(--text)"><sup>₹</sup>4,999<span style="font-size:1rem;color:var(--text3);font-weight:600;">+</span></div>
-        <div style="display:inline-flex;align-items:center;gap:6px;font-size:0.76rem;color:#86efac;background:rgba(16,185,129,0.08);border:1px solid rgba(16,185,129,0.18);border-radius:20px;padding:4px 10px;margin-bottom:18px;font-weight:600;">
-          <span style="width:6px;height:6px;border-radius:50%;background:#10b981;animation:pulse 1.8s infinite;flex-shrink:0;display:inline-block;"></span>
-          + ₹799/mo premium support &amp; updates
-        </div>
-        <p style="font-size:0.8rem;color:var(--text3);line-height:1.5;margin-bottom:4px;">For serious businesses that need full automation infrastructure — built, managed &amp; scaled.</p>
+        <div class="price-note">Setup fee · For serious businesses & agencies</div>
         <div class="price-divider"></div>
         <ul class="price-features">
           <li><span>✅</span><span>Unlimited Custom Workflows</span></li>
           <li><span>✅</span><span>Fully Branded Telegram Bot System</span></li>
           <li><span>✅</span><span>End-to-End Business Automation</span></li>
-          <li><span>✅</span><span>Payment &amp; Invoice Automation</span></li>
-          <li><span>✅</span><span>Custom Branding &amp; White-Label</span></li>
+          <li><span>✅</span><span>Payment & Invoice Automation</span></li>
+          <li><span>✅</span><span>Custom Branding</span></li>
           <li><span>✅</span><span>6 Months Priority Support</span></li>
-          <li><span>✅</span><span>Monthly Strategy &amp; Review Calls</span></li>
-          <li><span>✅</span><span>99.9% uptime — premium system guarantee</span></li>
+          <li><span>✅</span><span>Monthly Strategy & Review Calls</span></li>
         </ul>
-        <a href="https://t.me/Autoflow_897?start=fullstack" target="_blank" class="btn btn-outline btn-full" style="border-color:rgba(139,92,246,0.4);color:#c4b5fd;" aria-label="Get full system - Full Stack plan">Get Full System ⚡</a>
+        <a href="https://t.me/Autoflow_897?start=fullstack" target="_blank" class="btn btn-outline btn-full" aria-label="Start Full Stack plan">Get Full System ⚡</a>
       </div>
-
     </div>
-
-    <!-- Urgency line -->
-    <p style="text-align:center;font-size:0.85rem;color:#fbbf24;font-weight:600;margin-top:32px;" class="fade-up">⚡ Limited client slots — pricing may increase soon. Lock your rate now.</p>
-
-    <!-- Disclaimer -->
-    <p style="text-align:center;font-size:0.76rem;color:var(--text3);margin-top:14px;line-height:1.7;max-width:620px;margin-left:auto;margin-right:auto;" class="fade-up">
-      All plans include a one-time setup fee. The small ongoing running cost covers system maintenance, automation monitoring &amp; continuous updates — your system stays alive and optimized without any effort from your side.
-      <a href="https://t.me/Autoflow_897" target="_blank" style="color:#818cf8;text-decoration:none;"> Questions? Chat with us →</a>
-    </p>
 
     <div class="urgency-bar fade-up">
       <div>
-        <div class="urgency-text">🔥 Only <strong style="color:#fbbf24;" id="slots-left">7 slots</strong> remaining this week — hurry!</div>
-        <div style="font-size:0.8rem;color:var(--text3);margin-top:4px;">Prices go up after slots fill. Lock your rate now.</div>
+        <div class="urgency-text">🔥 Only <strong style="color:#fbbf24;" id="slots-left">7 slots</strong> remaining this week — act fast!</div>
+        <div style="font-size:0.8rem;color:var(--text3);margin-top:4px;">Prices increase once slots are filled. Lock in your rate now.</div>
       </div>
       <div class="countdown-row">
         <div class="countdown-block">
@@ -1726,13 +1697,13 @@ footer {
   <div class="container">
     <div class="text-center fade-up">
       <span class="section-tag">⭐ Reviews</span>
-      <h2 class="section-title">Log Kya Keh Rahe Hain?</h2>
-      <p class="section-sub mx-auto">Real users, real results. Yeh log pehle wahi problem face kar rahe the jo aap kar rahe ho.</p>
+      <h2 class="section-title">What Our Clients Are Saying</h2>
+      <p class="section-sub mx-auto">Real users, real results. These people faced the exact same problems you're dealing with right now.</p>
     </div>
     <div class="testi-grid">
       <div class="testi-card fade-up fade-up-d1">
         <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Mera daily 4 ghante ka manual work ab 10 minutes mein ho jaata hai! AutoFlow ne meri life change kar di. Business automation really works!"</p>
+        <p class="testi-text">"My daily 4-hour manual work now takes just 10 minutes! AutoFlow completely transformed how I run my business. Automation is absolutely real."</p>
         <div class="testi-author">
           <div class="testi-avatar" style="background:rgba(99,102,241,0.2);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
           <div>
@@ -1743,7 +1714,7 @@ footer {
       </div>
       <div class="testi-card fade-up fade-up-d2">
         <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"As a freelancer, I was losing clients due to slow follow-ups. AutoFlow's Telegram bot now handles everything automatically. Revenue badh gaya 40%!"</p>
+        <p class="testi-text">"As a freelancer, I was losing clients because of slow follow-ups. AutoFlow's Telegram bot now handles everything automatically. My revenue grew by 40%!"</p>
         <div class="testi-author">
           <div class="testi-avatar" style="background:rgba(16,185,129,0.2);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
           <div>
@@ -1754,7 +1725,7 @@ footer {
       </div>
       <div class="testi-card fade-up fade-up-d3">
         <div class="testi-stars">★★★★★</div>
-        <p class="testi-text">"Student hoon, assignments aur deadlines manage karna mushkil tha. AutoFlow ka student system set up hua ₹499 mein — completely worth it yaar!"</p>
+        <p class="testi-text">"Managing assignments and deadlines as a student was a nightmare. AutoFlow's student system automated everything — completely worth every rupee!"</p>
         <div class="testi-author">
           <div class="testi-avatar" style="background:rgba(245,158,11,0.2);"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.8"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
           <div>
@@ -1772,33 +1743,33 @@ footer {
   <div class="container">
     <div class="text-center fade-up">
       <span class="section-tag">❓ FAQ</span>
-      <h2 class="section-title">Common Questions</h2>
-      <p class="section-sub mx-auto">Koi doubt? Yahan clear karo — ya Telegram pe directly poocho.</p>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-sub mx-auto">Have questions? Find answers below — or ask us directly on Telegram.</p>
     </div>
     <div class="faq-list fade-up">
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Kya mujhe coding aani chahiye? <span class="faq-icon">▼</span></div>
-        <div class="faq-a">Bilkul nahi! Hum poora system aapke liye build karte hain. Aapko sirf batana hai kya chahiye — baaki sab hum handle karte hain. Zero technical knowledge required.</div>
+        <div class="faq-q" onclick="toggleFaq(this)">Do I need to know how to code? <span class="faq-icon">▼</span></div>
+        <div class="faq-a">Not at all! We build the entire system for you. You just tell us what you want automated — we handle everything else. Zero technical knowledge required.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">24 ghante mein really deliver hota hai? <span class="faq-icon">▼</span></div>
-        <div class="faq-a">Haan! Most projects 12-24 ghante mein deliver hote hain. Complex projects ke liye 48 ghante tak ho sakta hai. Hum har step pe update dete hain Telegram pe.</div>
+        <div class="faq-q" onclick="toggleFaq(this)">Do you really deliver in 24 hours? <span class="faq-icon">▼</span></div>
+        <div class="faq-a">Yes! Most projects are delivered within 12–24 hours. Complex projects may take up to 48 hours. We keep you updated at every step via Telegram.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">n8n kya hai? Yeh kaise kaam karta hai? <span class="faq-icon">▼</span></div>
-        <div class="faq-a">n8n ek powerful open-source automation tool hai — jaise Zapier ya Make, but more powerful aur affordable. Hum isko aapke server pe install karte hain, workflows banate hain, aur aapka Telegram bot connect karte hain.</div>
+        <div class="faq-q" onclick="toggleFaq(this)">What is n8n? How does it work? <span class="faq-icon">▼</span></div>
+        <div class="faq-a">n8n is a powerful open-source automation tool — like Zapier or Make, but more powerful and affordable. We install it on your server, build your custom workflows, and connect your Telegram bot.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Ek baar pay karna hoga ya monthly? <span class="faq-icon">▼</span></div>
-        <div class="faq-a">One-time setup fee hai. Koi monthly charge nahi. Aapka automation lifetime chalega. Sirf server hosting ka chhota monthly cost ho sakta hai (usually ₹200-500/month) jo directly aap pay karte ho server ko.</div>
+        <div class="faq-q" onclick="toggleFaq(this)">Is it a one-time payment or recurring? <span class="faq-icon">▼</span></div>
+        <div class="faq-a">It's a one-time setup fee. No hidden monthly charges from us. Your automation runs for life. There may be a small server hosting cost (usually ₹200–500/month) which you pay directly to the hosting provider.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Kya meri data safe rahegi? <span class="faq-icon">▼</span></div>
-        <div class="faq-a">100% safe. Aapka data aapke apne server pe rehta hai. Hum kisi third party ko share nahi karte. Telegram end-to-end encrypted hai. n8n self-hosted hai — complete control aapke haath mein.</div>
+        <div class="faq-q" onclick="toggleFaq(this)">Is my data safe and secure? <span class="faq-icon">▼</span></div>
+        <div class="faq-a">100% safe. Your data lives on your own server — we never share it with any third party. Telegram is end-to-end encrypted. n8n is self-hosted, meaning you have complete control over everything.</div>
       </div>
       <div class="faq-item">
-        <div class="faq-q" onclick="toggleFaq(this)">Support kaise milega? <span class="faq-icon">▼</span></div>
-        <div class="faq-a">Telegram pe directly available hain hum. Starter plan = 1 week support, Business = 1 month, Full Stack = 3 months priority support. Aur hum ek exclusive community mein add karte hain jahan future help milti rehti hai.</div>
+        <div class="faq-q" onclick="toggleFaq(this)">How do I get support after setup? <span class="faq-icon">▼</span></div>
+        <div class="faq-a">We're available directly on Telegram. Starter = 2 weeks support, Business = 2 months, Full Stack = 6 months priority support. You're also added to our exclusive community for ongoing help and updates.</div>
       </div>
     </div>
   </div>
@@ -1808,26 +1779,26 @@ footer {
 <section id="contact">
   <div class="container">
     <div class="text-center fade-up">
-      <span class="section-tag">📩 Get Started</span>
-      <h2 class="section-title">Apna Automation Journey Shuru Karo</h2>
-      <p class="section-sub mx-auto">Form fill karo — 10 minutes mein hum Telegram pe aapko contact karenge.</p>
+      <span class="section-tag">📩 Start Automation →</span>
+      <h2 class="section-title">Start Your Automation Journey Today</h2>
+      <p class="section-sub mx-auto">Fill out the form — we'll reach out to you on Telegram within 10 minutes.</p>
     </div>
     <div class="form-card fade-up">
-      <h3 class="form-title">🎯 Get Free Demo + Starter Pack</h3>
-      <p class="form-sub">Koi commitment nahi. Pehle demo dekho, phir decide karo.</p>
+      <h3 class="form-title">🎯 Get Your Free Demo + Starter Pack</h3>
+      <p class="form-sub">No commitment required. See the demo first, then decide.</p>
       <div id="form-container">
         <form id="leadForm" onsubmit="handleSubmit(event)" novalidate>
           <div class="field-group">
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
               <div class="field">
                 <label for="fname">Your Name *</label>
-                <input type="text" id="fname" name="name" placeholder="Aapka naam..." autocomplete="name" required>
-                <div class="form-error" id="err-name">Name zaroori hai.</div>
+                <input type="text" id="fname" name="name" placeholder="Your name..." autocomplete="name" required>
+                <div class="form-error" id="err-name">Please enter your name.</div>
               </div>
               <div class="field">
                 <label for="fphone">Phone Number *</label>
                 <input type="tel" id="fphone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" required>
-                <div class="form-error" id="err-phone">Phone number daalo.</div>
+                <div class="form-error" id="err-phone">Please enter your phone number.</div>
               </div>
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
@@ -1838,33 +1809,33 @@ footer {
               <div class="field">
                 <label for="fbudget">Your Budget *</label>
                 <select id="fbudget" name="budget" required>
-                  <option value="" disabled selected>Budget select karo...</option>
-                  <option value="Under ₹499">Under ₹499</option>
-                  <option value="₹499 - ₹999">₹499 - ₹999</option>
-                  <option value="₹999 - ₹1999">₹999 - ₹1999</option>
-                  <option value="₹1999+">₹1999+</option>
+                  <option value="" disabled selected>Select your budget...</option>
+                  <option value="Under ₹999">Under ₹999</option>
+                  <option value="₹999 - ₹1,999">₹999 - ₹1,999</option>
+                  <option value="₹1,999 - ₹4,999">₹1,999 - ₹4,999</option>
+                  <option value="₹4,999+">₹4,999+</option>
                   <option value="Custom Budget">Custom Budget</option>
                 </select>
-                <div class="form-error" id="err-budget">Budget select karo.</div>
+                <div class="form-error" id="err-budget">Please select your budget.</div>
               </div>
             </div>
             <div class="field">
               <label for="fservice">Service Interested In *</label>
               <select id="fservice" name="service" required>
                 <option value="" disabled selected>Select what you need...</option>
-                <option value="Business Automation">Business Automation (₹999)</option>
-                <option value="Telegram Bot Setup">Telegram Bot Setup (₹499)</option>
-                <option value="Daily Life Automation">Daily Life Automation (₹499)</option>
-                <option value="Student System">Student System (₹499)</option>
-                <option value="Full Stack Automation">Full Stack Automation (₹1999)</option>
+                <option value="Business Automation">Business Automation (₹1,999)</option>
+                <option value="Telegram Bot Setup">Telegram Bot Setup (₹999)</option>
+                <option value="Daily Life Automation">Daily Life Automation (₹999)</option>
+                <option value="Student System">Student System (₹999)</option>
+                <option value="Full Stack Automation">Full Stack Automation (₹4,999+)</option>
                 <option value="Custom">Custom — Not Sure Yet</option>
               </select>
-              <div class="form-error" id="err-service">Service select karo.</div>
+              <div class="form-error" id="err-service">Please select a service.</div>
             </div>
             <div class="field">
               <label for="fmessage">What Do You Want to Automate? *</label>
-              <textarea id="fmessage" name="message" placeholder="Example: Mujhe apna customer follow-up automate karna hai. Leads track karna hai. Telegram bot chahiye jo auto-reply kare..." required></textarea>
-              <div class="form-error" id="err-message">Kya automate karna hai, batao.</div>
+              <textarea id="fmessage" name="message" placeholder="Example: I want to automate customer follow-ups and lead tracking. I need a Telegram bot that auto-replies and saves data to Google Sheets..." required></textarea>
+              <div class="form-error" id="err-message">Please describe what you want to automate.</div>
             </div>
           </div>
           <button type="submit" class="btn btn-primary btn-full" id="submitBtn" aria-label="Submit lead form">
@@ -1879,7 +1850,7 @@ footer {
       </div>
       <div class="form-success" id="formSuccess">
         <div class="success-icon">🎉</div>
-        <h3 class="success-title">Bahut Badhiya! Form Submit Ho Gaya!</h3>
+        <h3 class="success-title">Awesome! Your Form Has Been Submitted!</h3>
         <p class="success-sub">
           Hum <strong>10 minutes mein</strong> aapko Telegram pe contact karenge.<br><br>
           Meanwhile, aap direct Telegram bot pe bhi shuru kar sakte ho 👇
@@ -1926,6 +1897,7 @@ footer {
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Get Demo</a></li>
           <li><a href="#freepack">Free Pack</a></li>
+          <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1940,7 +1912,7 @@ footer {
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 AutoFlow India. All rights reserved. | Made with ❤️ for India & Bangladesh 🇮🇳🇧🇩</p>
+      <p>© 2025 AutoFlow India. All rights reserved. | Built with ❤️ for India & Bangladesh 🇮🇳🇧🇩</p>
       <p style="color:var(--text3);font-size:0.75rem;">n8n + Telegram Bot Automation Service | automation service India</p>
     </div>
   </div>
@@ -1958,13 +1930,76 @@ footer {
 </div>
 
 <script>
-// ── DISABLE VIEW SOURCE / INSPECT ──
+// ── SECURITY SHIELD ──
+
+// 1. Block right-click
 document.addEventListener('contextmenu', e => e.preventDefault());
+
+// 2. Block text selection
+document.addEventListener('selectstart', e => e.preventDefault());
+
+// 3. Block drag
+document.addEventListener('dragstart', e => e.preventDefault());
+
+// 4. Console warning message
+(function() {
+  const style = 'color:#ef4444;font-size:18px;font-weight:bold;';
+  const style2 = 'color:#f59e0b;font-size:13px;';
+  console.log('%c⛔ WARNING!', style);
+  console.log('%cThis is a protected website. Unauthorized access, copying, or scraping is strictly prohibited.\n© AutoFlow India. All rights reserved.', style2);
+  console.clear = function(){};
+})();
+
+// 5. DevTools detection — blur page if opened
+(function() {
+  let devOpen = false;
+  const threshold = 160;
+  const overlay = document.createElement('div');
+  overlay.id = 'devtools-overlay';
+  overlay.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(6,9,18,0.97);z-index:99999;align-items:center;justify-content:center;flex-direction:column;gap:16px;';
+  overlay.innerHTML = '<div style="font-size:2.5rem;">🔒</div><div style="color:#f1f5f9;font-family:Arial;font-size:1.2rem;font-weight:700;">Access Restricted</div><div style="color:#94a3b8;font-size:0.9rem;text-align:center;max-width:300px;">Developer tools detected.<br>Please close them to continue.</div>';
+  document.body.appendChild(overlay);
+
+  setInterval(function() {
+    const widthDiff = window.outerWidth - window.innerWidth > threshold;
+    const heightDiff = window.outerHeight - window.innerHeight > threshold;
+    if (widthDiff || heightDiff) {
+      if (!devOpen) {
+        devOpen = true;
+        overlay.style.display = 'flex';
+        document.body.style.filter = 'blur(8px)';
+        overlay.style.filter = 'none';
+      }
+    } else {
+      if (devOpen) {
+        devOpen = false;
+        overlay.style.display = 'none';
+        document.body.style.filter = '';
+      }
+    }
+  }, 500);
+})();
+
+// 6. Block all keyboard shortcuts
 document.addEventListener('keydown', function(e) {
-  // Block F12, Ctrl+U, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C
+  // F12
   if (e.key === 'F12') { e.preventDefault(); return false; }
+  // Ctrl+U (view source)
   if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
-  if (e.ctrlKey && e.shiftKey && ['i','I','j','J','c','C'].includes(e.key)) { e.preventDefault(); return false; }
+  // Ctrl+S (save)
+  if (e.ctrlKey && e.key === 's') { e.preventDefault(); return false; }
+  // Ctrl+A (select all)
+  if (e.ctrlKey && e.key === 'a') { e.preventDefault(); return false; }
+  // Ctrl+C (copy)
+  if (e.ctrlKey && e.key === 'c') { e.preventDefault(); return false; }
+  // Ctrl+P (print)
+  if (e.ctrlKey && e.key === 'p') { e.preventDefault(); return false; }
+  // Ctrl+Shift+I / J / C / K (DevTools)
+  if (e.ctrlKey && e.shiftKey && ['i','I','j','J','c','C','k','K'].includes(e.key)) { e.preventDefault(); return false; }
+  // Ctrl+Shift+Delete
+  if (e.ctrlKey && e.shiftKey && e.key === 'Delete') { e.preventDefault(); return false; }
+  // Alt+F4 block (optional, won't work on OS level but adds layer)
+  if (e.altKey && e.key === 'F4') { e.preventDefault(); return false; }
 });
 
 // ── NAVBAR SCROLL ──
@@ -2109,7 +2144,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     </div>
     <div id="chat-messages" style="height:260px;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;scroll-behavior:smooth;">
       <div class="ai-msg" style="background:rgba(99,102,241,0.12);border:1px solid rgba(99,102,241,0.2);border-radius:12px 12px 12px 3px;padding:10px 13px;font-size:0.82rem;color:#e2e8f0;max-width:85%;line-height:1.5;">
-        Namaste! I'm AutoFlow AI. Ask me anything about automation, n8n, Telegram bots, or our services! 😊
+        Hi! I'm AutoFlow AI. Ask me anything about automation, n8n, Telegram bots, or our services! 😊
       </div>
     </div>
     <div style="padding:12px;border-top:1px solid rgba(255,255,255,0.06);display:flex;gap:8px;">
@@ -2162,8 +2197,8 @@ async function sendChat() {
   addTyping();
 
   const systemPrompt = `You are AutoFlow AI assistant for AutoFlow India — a business and daily life automation service using n8n + Telegram Bot. 
-Services: Business Automation (₹999), Telegram Bot Setup (₹499), Daily Life Automation (₹499), Full Stack (₹1999).
-Answer in simple English or Hinglish. Be helpful, friendly, concise. Always guide users to contact on WhatsApp: +919679435980 or fill the form for free demo.
+Services: Business Automation (₹1,999), Telegram Bot Setup (₹999), Daily Life Automation (₹999), Full Stack (₹4,999+).
+Answer in simple English. Be helpful, friendly, and concise. Always guide users to contact on WhatsApp: +919679435980 or fill the form for free demo.
 If asked about pricing, mention all 3 plans. Keep answers short (2-4 sentences max).`;
 
   try {
@@ -2189,21 +2224,21 @@ If asked about pricing, mention all 3 plans. Keep answers short (2-4 sentences m
     document.getElementById('typing-indicator')?.remove();
     const reply = data?.choices?.[0]?.message?.content 
       || data?.message?.content 
-      || "Sorry, AI server busy hai. WhatsApp pe contact karo: +919679435980";
+      || "Sorry, our AI is currently busy. Please contact us on WhatsApp: +919679435980";
     addMsg(reply, false);
   } catch (err) {
     document.getElementById('typing-indicator')?.remove();
     // Fallback smart replies
     const q = text.toLowerCase();
-    let fallback = "WhatsApp pe contact karo: +919679435980 — hum turant reply karenge!";
-    if (q.includes('price') || q.includes('cost') || q.includes('pricing') || q.includes('kitna'))
-      fallback = "Our plans: Starter ₹499 (1 workflow), Business ₹999 (3 workflows), Full Stack ₹1999 (unlimited). 24hr delivery! Demo ke liye form fill karo.";
+    let fallback = "Please contact us on WhatsApp: +919679435980 — we reply instantly!";
+    if (q.includes('price') || q.includes('cost') || q.includes('pricing') || q.includes('cost'))
+      fallback = "Our plans: Starter ₹999 (1 workflow), Business ₹1,999 (5 workflows), Full Stack ₹4,999+ (unlimited). 24hr delivery! Fill the form to get a free demo.";
     else if (q.includes('telegram') || q.includes('bot'))
-      fallback = "Hum Telegram bot banate hain jo 24/7 auto-reply karta hai, leads capture karta hai, aur Google Sheets mein save karta hai. ₹499 se shuru!";
+      fallback = "We build Telegram bots that auto-reply 24/7, capture leads, and save data to Google Sheets automatically. Starting at ₹999!";
     else if (q.includes('n8n') || q.includes('automat'))
-      fallback = "n8n ek powerful automation tool hai. Hum aapke liye custom workflows banate hain — no coding needed! 24 ghante mein delivery.";
-    else if (q.includes('hi') || q.includes('hello') || q.includes('helo') || q.includes('namaste'))
-      fallback = "Namaste! AutoFlow India mein aapka swagat hai. Kya automate karna chahte ho? Pricing, services, ya free demo ke baare mein poochho!";
+      fallback = "n8n is a powerful automation tool. We build custom workflows for you — no coding needed! Delivered within 24 hours.";
+    else if (q.includes('hi') || q.includes('hello') || q.includes('helo') || q.includes('help'))
+      fallback = "Hello! Welcome to AutoFlow India. What would you like to automate? Ask me about pricing, services, or getting a free demo!";
     addMsg(fallback, false);
   }
 }

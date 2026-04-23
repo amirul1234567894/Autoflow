@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog – AutoFlow India | Automation Tips, n8n Guides & Telegram Bot Tutorials</title>
+<meta name="description" content="Learn everything about business automation, n8n workflows, Telegram bots and productivity systems. Free guides and tutorials by AutoFlow India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b82f6'/%3E%3Cpath d='M8 16 L14 22 L24 10' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
+<style>
+:root {
+  --bg: #060912; --bg2: #0b1120;
+  --surface: rgba(255,255,255,0.04); --surface2: rgba(255,255,255,0.07);
+  --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.14);
+  --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+  --grad: linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%);
+  --radius: 16px; --radius2: 24px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; line-height: 1.6; overflow-x: hidden; }
+h1,h2,h3,h4 { font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; line-height: 1.2; }
+body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 20px; background: rgba(6,9,18,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+.logo { font-family: Arial, sans-serif; font-weight: 800; font-size: 1.4rem; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; }
+.logo span { color: #fff; -webkit-text-fill-color: #fff; }
+.nav-links { display: flex; gap: 28px; list-style: none; }
+.nav-links a { color: var(--text2); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
+.nav-cta { background: var(--grad); color: #fff !important; padding: 9px 20px; border-radius: 50px; font-weight: 600 !important; font-size: 0.85rem !important; }
+
+/* HERO */
+.blog-hero { padding: 140px 0 80px; text-align: center; position: relative; }
+.blog-hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 600px; height: 400px; background: radial-gradient(ellipse, rgba(99,102,241,0.15) 0%, transparent 70%); pointer-events: none; }
+.section-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.25); color: #a5b4fc; padding: 6px 14px; border-radius: 50px; font-size: 0.78rem; font-weight: 600; margin-bottom: 20px; letter-spacing: 0.04em; text-transform: uppercase; }
+.blog-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; margin-bottom: 16px; letter-spacing: -0.02em; }
+.gradient-text { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.blog-hero p { color: var(--text2); font-size: 1.1rem; max-width: 520px; margin: 0 auto 40px; line-height: 1.7; }
+
+/* SEARCH BAR */
+.blog-search { display: flex; gap: 12px; max-width: 480px; margin: 0 auto 60px; }
+.blog-search input { flex: 1; background: var(--surface2); border: 1px solid var(--border2); border-radius: 12px; padding: 13px 18px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
+.blog-search input:focus { border-color: rgba(99,102,241,0.5); }
+.blog-search input::placeholder { color: var(--text3); }
+.btn-grad { background: var(--grad); color: #fff; border: none; padding: 13px 24px; border-radius: 12px; font-weight: 600; font-size: 0.9rem; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: opacity 0.2s; }
+.btn-grad:hover { opacity: 0.9; }
+
+/* CATEGORIES */
+.categories { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 60px; }
+.cat-btn { background: var(--surface); border: 1px solid var(--border); color: var(--text2); padding: 7px 18px; border-radius: 50px; font-size: 0.82rem; font-weight: 600; cursor: pointer; transition: all 0.2s; font-family: 'DM Sans', sans-serif; }
+.cat-btn:hover, .cat-btn.active { background: rgba(99,102,241,0.12); border-color: rgba(99,102,241,0.4); color: #a5b4fc; }
+
+/* FEATURED POST */
+.featured-post { background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(59,130,246,0.06)); border: 1px solid rgba(99,102,241,0.25); border-radius: var(--radius2); padding: 48px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-bottom: 64px; position: relative; overflow: hidden; transition: transform 0.3s; }
+.featured-post::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--grad); }
+.featured-post:hover { transform: translateY(-4px); }
+.featured-label { display: inline-block; background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.3); color: #fbbf24; padding: 4px 12px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 16px; }
+.featured-post h2 { font-size: 1.7rem; font-weight: 800; margin-bottom: 14px; letter-spacing: -0.02em; line-height: 1.25; }
+.featured-post p { color: var(--text2); font-size: 0.95rem; line-height: 1.7; margin-bottom: 24px; }
+.post-meta { display: flex; gap: 16px; align-items: center; font-size: 0.78rem; color: var(--text3); margin-bottom: 24px; flex-wrap: wrap; }
+.post-tag { background: rgba(99,102,241,0.1); color: #a5b4fc; padding: 3px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 600; }
+.read-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--grad); color: #fff; padding: 12px 24px; border-radius: 10px; font-weight: 600; font-size: 0.9rem; text-decoration: none; transition: all 0.2s; }
+.read-btn:hover { opacity: 0.9; transform: translateX(2px); }
+.featured-visual { background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px; }
+.code-block { background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.06); border-radius: 10px; padding: 20px; font-family: 'Courier New', monospace; font-size: 0.78rem; line-height: 1.8; color: #94a3b8; }
+.code-block .c-purple { color: #c084fc; }
+.code-block .c-blue { color: #60a5fa; }
+.code-block .c-green { color: #34d399; }
+.code-block .c-yellow { color: #fbbf24; }
+
+/* BLOG GRID */
+.blog-section-title { font-size: 1.4rem; font-weight: 800; margin-bottom: 28px; }
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; margin-bottom: 80px; }
+.blog-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius2); overflow: hidden; transition: all 0.3s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+.blog-card:hover { transform: translateY(-5px); border-color: rgba(99,102,241,0.3); box-shadow: 0 20px 50px rgba(99,102,241,0.1); }
+.card-thumb { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; position: relative; overflow: hidden; }
+.card-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.card-tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+.card-tag { background: rgba(99,102,241,0.1); color: #a5b4fc; padding: 3px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: 600; }
+.card-body h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; line-height: 1.35; }
+.card-body p { font-size: 0.83rem; color: var(--text2); line-height: 1.6; flex: 1; margin-bottom: 18px; }
+.card-meta { display: flex; gap: 12px; font-size: 0.75rem; color: var(--text3); align-items: center; }
+.card-read { margin-left: auto; color: #a5b4fc; font-weight: 600; font-size: 0.78rem; }
+
+/* NEWSLETTER */
+.newsletter { background: linear-gradient(135deg, rgba(16,185,129,0.08), rgba(99,102,241,0.06)); border: 1px solid rgba(16,185,129,0.2); border-radius: var(--radius2); padding: 48px; text-align: center; margin-bottom: 80px; position: relative; overflow: hidden; }
+.newsletter::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, #10b981, #3b82f6); }
+.newsletter h2 { font-size: 1.8rem; font-weight: 800; margin-bottom: 12px; }
+.newsletter p { color: var(--text2); margin-bottom: 28px; font-size: 0.95rem; }
+.nl-form { display: flex; gap: 12px; max-width: 420px; margin: 0 auto; }
+.nl-form input { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border2); border-radius: 10px; padding: 13px 16px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none; }
+.nl-form input::placeholder { color: var(--text3); }
+
+/* FOOTER */
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 40px 0; text-align: center; }
+footer p { color: var(--text3); font-size: 0.85rem; }
+footer a { color: #818cf8; text-decoration: none; }
+
+@media (max-width: 768px) {
+  .featured-post { grid-template-columns: 1fr; }
+  .featured-visual { display: none; }
+  .nav-links { display: none; }
+  .featured-post { padding: 28px; }
+}
+@media (max-width: 600px) {
+  .nl-form { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner container">
+    <a href="index.html" class="logo">Auto<span>Flow</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#problem">Problem</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#pricing">Pricing</a></li>
+      <li><a href="blog.html" style="color:#a5b4fc;">Blog</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="https://t.me/Autoflow_897?start=landing" target="_blank" class="nav-cta">Start on Telegram ↗</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="blog-hero">
+  <div class="container">
+    <span class="section-tag">📝 AutoFlow Blog</span>
+    <h1>Automation Tips, Guides &<br><span class="gradient-text">Real-World Workflows</span></h1>
+    <p>Learn how to save hours every week with n8n automation, Telegram bots, and smart workflow systems — written for Indian businesses.</p>
+    <div class="blog-search">
+      <input type="text" placeholder="Search articles..." id="searchInput" onkeyup="filterPosts()">
+      <button class="btn-grad">Search</button>
+    </div>
+    <div class="categories">
+      <button class="cat-btn active" onclick="filterCat('all', this)">All Posts</button>
+      <button class="cat-btn" onclick="filterCat('n8n', this)">n8n Tutorials</button>
+      <button class="cat-btn" onclick="filterCat('telegram', this)">Telegram Bot</button>
+      <button class="cat-btn" onclick="filterCat('business', this)">Business Automation</button>
+      <button class="cat-btn" onclick="filterCat('productivity', this)">Productivity</button>
+    </div>
+  </div>
+</div>
+
+<div style="padding-bottom:100px;">
+  <div class="container">
+
+    <!-- FEATURED POST -->
+    <a href="blog-n8n-beginners-guide.html" class="featured-post" style="text-decoration:none;color:inherit;display:grid;">
+      <div>
+        <span class="featured-label">⭐ Featured</span>
+        <div class="post-meta">
+          <span class="post-tag">n8n Tutorial</span>
+          <span>April 20, 2025</span>
+          <span>8 min read</span>
+        </div>
+        <h2>The Complete Beginner's Guide to n8n Automation in India</h2>
+        <p>Never heard of n8n? This guide takes you from zero to your first working automation workflow — no coding required. We cover setup, basics, and 5 real workflows you can deploy today.</p>
+        <span class="read-btn">Read Full Guide →</span>
+      </div>
+      <div class="featured-visual">
+        <div style="font-size:0.7rem;color:var(--text3);margin-bottom:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.05em;">Sample n8n Workflow</div>
+        <div class="code-block">
+<span class="c-purple">trigger</span>: <span class="c-blue">Telegram Message</span><br>
+  ↓<br>
+<span class="c-purple">node</span>: <span class="c-yellow">Parse Lead Data</span><br>
+  ↓<br>
+<span class="c-purple">node</span>: <span class="c-green">Save → Google Sheets</span><br>
+  ↓<br>
+<span class="c-purple">node</span>: <span class="c-blue">Send Auto-Reply</span><br>
+  ↓<br>
+<span class="c-purple">node</span>: <span class="c-yellow">Notify Owner via Bot</span><br>
+  ↓<br>
+<span class="c-green">✅ Workflow Complete — 0.3s</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- BLOG GRID -->
+    <h2 class="blog-section-title">Latest Articles</h2>
+    <div class="blog-grid" id="blogGrid">
+
+      <a href="blog-telegram-bot-business.html" class="blog-card" data-cat="telegram business">
+        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(0,136,204,0.2),rgba(99,102,241,0.1));">🤖</div>
+        <div class="card-body">
+          <div class="card-tags"><span class="card-tag">Telegram Bot</span><span class="card-tag">Business</span></div>
+          <h3>How to Set Up a Telegram Bot That Captures Leads 24/7</h3>
+          <p>Step-by-step guide to building a Telegram bot that automatically captures leads, replies to customers, and saves data to a spreadsheet — without any coding.</p>
+          <div class="card-meta">
+            <span>April 18, 2025</span>
+            <span>6 min read</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="blog-automate-followups.html" class="blog-card" data-cat="business productivity">
+        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(59,130,246,0.1));">⚡</div>
+        <div class="card-body">
+          <div class="card-tags"><span class="card-tag">Business</span><span class="card-tag">Productivity</span></div>
+          <h3>Stop Losing Clients: Automate Your Follow-Up System in 1 Hour</h3>
+          <p>Most businesses lose 60% of potential clients due to slow follow-ups. Here's how to build an automated follow-up system that never misses a lead — using n8n and Telegram.</p>
+          <div class="card-meta">
+            <span>April 15, 2025</span>
+            <span>5 min read</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="blog-card" data-cat="n8n productivity">
+        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(59,130,246,0.1));">📊</div>
+        <div class="card-body">
+          <div class="card-tags"><span class="card-tag">n8n</span><span class="card-tag">Productivity</span></div>
+          <h3>5 n8n Workflows Every Indian Freelancer Should Be Running</h3>
+          <p>From automatic invoice reminders to client onboarding sequences — these 5 n8n workflows will save you at least 10 hours every week as a freelancer.</p>
+          <div class="card-meta">
+            <span>April 12, 2025</span>
+            <span>7 min read</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="blog-card" data-cat="telegram n8n">
+        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(239,68,68,0.1));">🔔</div>
+        <div class="card-body">
+          <div class="card-tags"><span class="card-tag">Telegram</span><span class="card-tag">n8n</span></div>
+          <h3>Build a Business Alert System on Telegram — Step by Step</h3>
+          <p>Get real-time alerts for new orders, payments, form submissions, and website events directly on Telegram. No more checking dashboards all day.</p>
+          <div class="card-meta">
+            <span>April 10, 2025</span>
+            <span>5 min read</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="blog-card" data-cat="business productivity">
+        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(99,102,241,0.1));">💰</div>
+        <div class="card-body">
+          <div class="card-tags"><span class="card-tag">Business</span><span class="card-tag">ROI</span></div>
+          <h3>How Much Time (and Money) Can Automation Actually Save You?</h3>
+          <p>We analysed 100+ AutoFlow clients and calculated the real numbers. The average client saves 3.5 hours daily and recovers the setup cost within the first week.</p>
+          <div class="card-meta">
+            <span>April 8, 2025</span>
+            <span>4 min read</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="#" class="blog-card" data-cat="n8n">
+        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(59,130,246,0.2),rgba(139,92,246,0.1));">🔄</div>
+        <div class="card-body">
+          <div class="card-tags"><span class="card-tag">n8n</span><span class="card-tag">Tutorial</span></div>
+          <h3>n8n vs Zapier vs Make: Which Is Best for Indian Businesses?</h3>
+          <p>An honest, no-fluff comparison of the top automation tools — covering cost, features, and which one makes the most sense if you're running a business in India.</p>
+          <div class="card-meta">
+            <span>April 5, 2025</span>
+            <span>6 min read</span>
+            <span class="card-read">Read →</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- NEWSLETTER -->
+    <div class="newsletter">
+      <span class="section-tag">📬 Newsletter</span>
+      <h2>Get Weekly Automation Tips</h2>
+      <p>Free guides, workflow templates, and real-world automation ideas — delivered to your inbox every week.</p>
+      <div class="nl-form">
+        <input type="email" placeholder="your@email.com">
+        <button class="btn-grad">Subscribe Free</button>
+      </div>
+      <p style="font-size:0.75rem;color:var(--text3);margin-top:14px;">No spam. Unsubscribe anytime.</p>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>© 2025 <a href="index.html">AutoFlow India</a> · <a href="blog.html">Blog</a> · <a href="index.html#pricing">Pricing</a> · <a href="https://t.me/Autoflow_897" target="_blank">Telegram</a></p>
+  </div>
+</footer>
+
+<script>
+function filterCat(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.blog-card').forEach(card => {
+    if (cat === 'all' || card.dataset.cat.includes(cat)) {
+      card.style.display = 'flex';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+function filterPosts() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  document.querySelectorAll('.blog-card').forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(q) ? 'flex' : 'none';
+  });
+}
+</script>
+</body>
+</html>
