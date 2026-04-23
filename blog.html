@@ -95,6 +95,11 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 20px
 .nl-form { display: flex; gap: 12px; max-width: 420px; margin: 0 auto; }
 .nl-form input { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid var(--border2); border-radius: 10px; padding: 13px 16px; color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none; }
 .nl-form input::placeholder { color: var(--text3); }
+.nl-success { display: none; flex-direction: column; align-items: center; gap: 12px; animation: fadeInUp 0.5s ease forwards; }
+.nl-success-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(16,185,129,0.15); border: 2px solid rgba(16,185,129,0.4); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; }
+.nl-success h3 { font-size: 1.2rem; font-weight: 700; color: var(--text); }
+.nl-success p { font-size: 0.88rem; color: var(--text2); }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 
 /* FOOTER */
 footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 40px 0; text-align: center; }
@@ -186,7 +191,7 @@ footer a { color: #818cf8; text-decoration: none; }
     <div class="blog-grid" id="blogGrid">
 
       <a href="blog-telegram-bot-business.html" class="blog-card" data-cat="telegram business">
-        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(0,136,204,0.2),rgba(99,102,241,0.1));">🤖</div>
+        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(0,136,204,0.2),rgba(99,102,241,0.1));"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
         <div class="card-body">
           <div class="card-tags"><span class="card-tag">Telegram Bot</span><span class="card-tag">Business</span></div>
           <h3>How to Set Up a Telegram Bot That Captures Leads 24/7</h3>
@@ -200,7 +205,7 @@ footer a { color: #818cf8; text-decoration: none; }
       </a>
 
       <a href="blog-automate-followups.html" class="blog-card" data-cat="business productivity">
-        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(59,130,246,0.1));">⚡</div>
+        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(59,130,246,0.1));"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <div class="card-body">
           <div class="card-tags"><span class="card-tag">Business</span><span class="card-tag">Productivity</span></div>
           <h3>Stop Losing Clients: Automate Your Follow-Up System in 1 Hour</h3>
@@ -214,7 +219,7 @@ footer a { color: #818cf8; text-decoration: none; }
       </a>
 
       <a href="#" class="blog-card" data-cat="n8n productivity">
-        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(59,130,246,0.1));">📊</div>
+        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(139,92,246,0.2),rgba(59,130,246,0.1));"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="1.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
         <div class="card-body">
           <div class="card-tags"><span class="card-tag">n8n</span><span class="card-tag">Productivity</span></div>
           <h3>5 n8n Workflows Every Indian Freelancer Should Be Running</h3>
@@ -228,7 +233,7 @@ footer a { color: #818cf8; text-decoration: none; }
       </a>
 
       <a href="#" class="blog-card" data-cat="telegram n8n">
-        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(239,68,68,0.1));">🔔</div>
+        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(245,158,11,0.2),rgba(239,68,68,0.1));"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div>
         <div class="card-body">
           <div class="card-tags"><span class="card-tag">Telegram</span><span class="card-tag">n8n</span></div>
           <h3>Build a Business Alert System on Telegram — Step by Step</h3>
@@ -242,7 +247,7 @@ footer a { color: #818cf8; text-decoration: none; }
       </a>
 
       <a href="#" class="blog-card" data-cat="business productivity">
-        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(99,102,241,0.1));">💰</div>
+        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(99,102,241,0.1));"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="1.5"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg></div>
         <div class="card-body">
           <div class="card-tags"><span class="card-tag">Business</span><span class="card-tag">ROI</span></div>
           <h3>How Much Time (and Money) Can Automation Actually Save You?</h3>
@@ -256,7 +261,7 @@ footer a { color: #818cf8; text-decoration: none; }
       </a>
 
       <a href="#" class="blog-card" data-cat="n8n">
-        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(59,130,246,0.2),rgba(139,92,246,0.1));">🔄</div>
+        <div class="card-thumb" style="background:linear-gradient(135deg,rgba(59,130,246,0.2),rgba(139,92,246,0.1));"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="1.5"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg></div>
         <div class="card-body">
           <div class="card-tags"><span class="card-tag">n8n</span><span class="card-tag">Tutorial</span></div>
           <h3>n8n vs Zapier vs Make: Which Is Best for Indian Businesses?</h3>
@@ -276,11 +281,20 @@ footer a { color: #818cf8; text-decoration: none; }
       <span class="section-tag">📬 Newsletter</span>
       <h2>Get Weekly Automation Tips</h2>
       <p>Free guides, workflow templates, and real-world automation ideas — delivered to your inbox every week.</p>
-      <div class="nl-form">
-        <input type="email" placeholder="your@email.com">
-        <button class="btn-grad">Subscribe Free</button>
+
+      <!-- Form -->
+      <div class="nl-form" id="nlForm">
+        <input type="email" id="nlEmail" placeholder="your@email.com">
+        <button class="btn-grad" onclick="subscribeNewsletter()">Subscribe Free</button>
       </div>
-      <p style="font-size:0.75rem;color:var(--text3);margin-top:14px;">No spam. Unsubscribe anytime.</p>
+      <p id="nlHint" style="font-size:0.75rem;color:var(--text3);margin-top:14px;">No spam. Unsubscribe anytime.</p>
+
+      <!-- Success State -->
+      <div class="nl-success" id="nlSuccess">
+        <div class="nl-success-icon">✅</div>
+        <h3>You're subscribed! 🎉</h3>
+        <p>Welcome to the AutoFlow community.<br>Your first automation tip is on its way.</p>
+      </div>
     </div>
 
   </div>
@@ -293,6 +307,50 @@ footer a { color: #818cf8; text-decoration: none; }
 </footer>
 
 <script>
+async function subscribeNewsletter() {
+  const emailInput = document.getElementById('nlEmail');
+  const email = emailInput.value.trim();
+
+  // Basic validation
+  if (!email || !email.includes('@') || !email.includes('.')) {
+    emailInput.style.borderColor = 'rgba(239,68,68,0.6)';
+    emailInput.placeholder = 'Please enter a valid email!';
+    setTimeout(() => {
+      emailInput.style.borderColor = '';
+      emailInput.placeholder = 'your@email.com';
+    }, 2000);
+    return;
+  }
+
+  // Disable button to prevent double click
+  const btn = document.querySelector('#nlForm .btn-grad');
+  btn.textContent = 'Subscribing...';
+  btn.disabled = true;
+
+  // Send to n8n webhook (same as main site lead webhook)
+  try {
+    await fetch('https://n8n1-1fep.onrender.com/webhook/autoflow-leads', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        email: email,
+        source: 'Blog Newsletter',
+        status: 'newsletter',
+        timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+      })
+    });
+  } catch(e) {
+    console.log('Webhook error:', e);
+  }
+
+  // Show success state
+  document.getElementById('nlForm').style.display = 'none';
+  document.getElementById('nlHint').style.display = 'none';
+  const success = document.getElementById('nlSuccess');
+  success.style.display = 'flex';
+}
+
 function filterCat(cat, btn) {
   document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
