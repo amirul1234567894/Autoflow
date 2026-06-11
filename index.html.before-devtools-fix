@@ -86,10 +86,10 @@
 
 /* ── CONTENT PROTECTION ── */
 body {
-  -webkit-user-select: auto;
-  -moz-user-select: auto;
-  -ms-user-select: auto;
-  user-select: auto;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 input, textarea, select {
   -webkit-user-select: text;
@@ -97,7 +97,7 @@ input, textarea, select {
   -ms-user-select: text;
   user-select: text;
 }
-img { -webkit-user-drag: none; user-drag: none; }
+img { pointer-events: none; -webkit-user-drag: none; user-drag: none; }
 
 html { scroll-behavior: smooth; font-size: 16px; }
 
@@ -926,7 +926,7 @@ section { padding: 100px 0; position: relative; }
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  user-select: auto;
+  user-select: none;
 }
 .faq-q:hover { color: #a5b4fc; }
 .faq-icon { color: var(--text3); font-size: 0.9rem; transition: transform 0.3s; flex-shrink: 0; }
@@ -1136,7 +1136,7 @@ footer {
 }
 </style>
   <!-- Google AdSense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6510553016832156" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -1935,8 +1935,6 @@ footer {
           <li><a href="#faq">FAQ</a></li>
           <li><a href="#contact">Get Demo</a></li>
           <li><a href="#freepack">Free Pack</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="contact.html">Contact</a></li>
           <li><a href="blog.html">Blog</a></li>
         </ul>
       </div>
@@ -1944,11 +1942,10 @@ footer {
         <h4>Contact</h4>
         <ul>
           <li><a href="https://t.me/Autoflow_897" target="_blank">Telegram Bot</a></li>
-          <li><a href="mailto:hello@autoflowa.in">hello@autoflowa.in</a></li>
+          <li><a href="mailto:hello@autoflow.in">hello@autoflow.in</a></li>
           <li><a href="#">India / Bangladesh</a></li>
           <li><a href="privacy-policy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Service</a></li>
-          <li><a href="disclaimer.html">Disclaimer</a></li>
         </ul>
       </div>
     </div>
@@ -1974,13 +1971,13 @@ footer {
 // ── SECURITY SHIELD ──
 
 // 1. Block right-click
-
+document.addEventListener('contextmenu', e => e.preventDefault());
 
 // 2. Block text selection
-
+document.addEventListener('selectstart', e => e.preventDefault());
 
 // 3. Block drag
-
+document.addEventListener('dragstart', e => e.preventDefault());
 
 // 4. Console warning message
 (function() {
@@ -1988,12 +1985,60 @@ footer {
   const style2 = 'color:#f59e0b;font-size:13px;';
   console.log('%c⛔ WARNING!', style);
   console.log('%cThis is a protected website. Unauthorized access, copying, or scraping is strictly prohibited.\n© AutoFlowa India. All rights reserved.', style2);
-  // console.clear left intact
+  console.clear = function(){};
 })();
 
-// DevTools detection removed (was causing UX issues)
+// 5. DevTools detection — blur page if opened
+(function() {
+  let devOpen = false;
+  const threshold = 160;
+  const overlay = document.createElement('div');
+  overlay.id = 'devtools-overlay';
+  overlay.style.cssText = 'display:none;position:fixed;inset:0;background:rgba(6,9,18,0.97);z-index:99999;align-items:center;justify-content:center;flex-direction:column;gap:16px;';
+  overlay.innerHTML = '<div style="font-size:2.5rem;">🔒</div><div style="color:#f1f5f9;font-family:Arial;font-size:1.2rem;font-weight:700;">Access Restricted</div><div style="color:#94a3b8;font-size:0.9rem;text-align:center;max-width:300px;">Developer tools detected.<br>Please close them to continue.</div>';
+  document.body.appendChild(overlay);
 
-// Keyboard shortcut blocking removed (was blocking F12, Ctrl+U, Ctrl+C, Ctrl+P)
+  setInterval(function() {
+    const widthDiff = window.outerWidth - window.innerWidth > threshold;
+    const heightDiff = window.outerHeight - window.innerHeight > threshold;
+    if (widthDiff || heightDiff) {
+      if (!devOpen) {
+        devOpen = true;
+        overlay.style.display = 'flex';
+        document.body.style.filter = 'blur(8px)';
+        overlay.style.filter = 'none';
+      }
+    } else {
+      if (devOpen) {
+        devOpen = false;
+        overlay.style.display = 'none';
+        document.body.style.filter = '';
+      }
+    }
+  }, 500);
+})();
+
+// 6. Block all keyboard shortcuts
+document.addEventListener('keydown', function(e) {
+  // F12
+  if (e.key === 'F12') { e.preventDefault(); return false; }
+  // Ctrl+U (view source)
+  if (e.ctrlKey && e.key === 'u') { e.preventDefault(); return false; }
+  // Ctrl+S (save)
+  if (e.ctrlKey && e.key === 's') { e.preventDefault(); return false; }
+  // Ctrl+A (select all)
+  if (e.ctrlKey && e.key === 'a') { e.preventDefault(); return false; }
+  // Ctrl+C (copy)
+  if (e.ctrlKey && e.key === 'c') { e.preventDefault(); return false; }
+  // Ctrl+P (print)
+  if (e.ctrlKey && e.key === 'p') { e.preventDefault(); return false; }
+  // Ctrl+Shift+I / J / C / K (DevTools)
+  if (e.ctrlKey && e.shiftKey && ['i','I','j','J','c','C','k','K'].includes(e.key)) { e.preventDefault(); return false; }
+  // Ctrl+Shift+Delete
+  if (e.ctrlKey && e.shiftKey && e.key === 'Delete') { e.preventDefault(); return false; }
+  // Alt+F4 block (optional, won't work on OS level but adds layer)
+  if (e.altKey && e.key === 'F4') { e.preventDefault(); return false; }
+});
 
 // ── NAVBAR SCROLL ──
 window.addEventListener('scroll', () => {
@@ -2071,32 +2116,38 @@ async function handleSubmit(e) {
   btn.disabled = true;
   btnText.textContent = 'Submitting...';
 
- // Fire-and-forget: show success immediately, webhook runs in background
-  const endpoint = 'https://n8n1-1fep.onrender.com/webhook/autoflow-leads';
-  const payload = {
-    full_name : name,
-    phone     : phone,
-    email     : email,
-    budget    : budget,
-    service   : service,
-    message   : message,
-    source    : 'AutoFlowa Website',
-    status    : 'new',
-    timestamp : new Date().toLocaleString('en-IN', {timeZone: 'Asia/Kolkata'})
-  };
-  // No await - backend runs in background
-  fetch(endpoint, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload)
-  }).catch(() => {
-    fetch(endpoint, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify(payload)
-    });
-  });
+  try {
+    const endpoint = 'https://n8n1-1fep.onrender.com/webhook/autoflow-leads';
+    const payload = {
+      full_name : name,
+      phone     : phone,
+      email     : email,
+      budget    : budget,
+      service   : service,
+      message   : message,
+      source    : 'AutoFlowa Website',
+      status    : 'new',
+      timestamp : new Date().toLocaleString('en-IN', {timeZone: 'Asia/Kolkata'})
+    };
+    try {
+      // Try normal fetch first (works if n8n has CORS enabled)
+      await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } catch(e) {
+      // Fallback: text/plain bypasses CORS preflight
+      await fetch(endpoint, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify(payload)
+      });
+    }
+  } catch (err) {
+    console.log('Webhook error:', err);
+  }
 
   document.getElementById('form-container').style.display = 'none';
   document.getElementById('formSuccess').classList.add('show');
@@ -2233,4 +2284,3 @@ If asked about pricing, mention all 3 plans. Keep answers short (2-4 sentences m
 
 </body>
 </html>
-

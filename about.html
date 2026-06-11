@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - AutoFlowa India</title>
+<meta name="description" content="Learn about AutoFlowa India - we help businesses automate repetitive work with n8n, Telegram bots, and no-code tools.">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #060912; --bg2: #0b1120;
+  --surface: rgba(255,255,255,0.04); --surface2: rgba(255,255,255,0.07);
+  --border: rgba(255,255,255,0.08); --border2: rgba(255,255,255,0.14);
+  --text: #f1f5f9; --text2: #94a3b8; --text3: #64748b;
+  --grad: linear-gradient(135deg, #3b82f6 0%, #6366f1 50%, #8b5cf6 100%);
+  --radius: 16px; --radius2: 24px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; line-height: 1.7; overflow-x: hidden; }
+h1,h2,h3,h4 { font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; line-height: 1.25; }
+body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 0; }
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0 24px; background: rgba(6,9,18,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+.nav-inner { max-width: 1120px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+.logo { font-family: Arial, sans-serif; font-weight: 800; font-size: 1.3rem; background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; text-decoration: none; }
+.logo span { color: #fff; -webkit-text-fill-color: #fff; }
+.nav-back { color: var(--text2); text-decoration: none; font-size: 0.88rem; font-weight: 500; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+.nav-back:hover { color: var(--text); }
+.container { max-width: 780px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+.page-header { padding: 130px 0 60px; }
+.page-tag { display: inline-flex; align-items: center; gap: 6px; background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.25); color: #a5b4fc; padding: 5px 14px; border-radius: 50px; font-size: 0.75rem; font-weight: 600; margin-bottom: 20px; letter-spacing: 0.06em; text-transform: uppercase; }
+.page-header h1 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; margin-bottom: 16px; letter-spacing: -0.02em; }
+.gradient-text { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.last-updated { font-size: 0.82rem; color: var(--text3); }
+.doc-body { padding-bottom: 100px; }
+.doc-body h2 { font-size: 1.25rem; font-weight: 700; margin: 44px 0 14px; color: var(--text); padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.doc-body h3 { font-size: 1rem; font-weight: 700; margin: 24px 0 10px; color: var(--text); }
+.doc-body p { color: var(--text2); font-size: 0.95rem; margin-bottom: 16px; }
+.doc-body ul { padding-left: 20px; margin-bottom: 16px; }
+.doc-body li { color: var(--text2); font-size: 0.95rem; margin-bottom: 8px; line-height: 1.7; }
+.doc-body strong { color: var(--text); font-weight: 600; }
+.doc-body a { color: #818cf8; text-decoration: none; }
+.doc-body a:hover { text-decoration: underline; }
+.info-box { background: var(--surface); border: 1px solid var(--border2); border-radius: var(--radius); padding: 20px 24px; margin: 24px 0; }
+.info-box p { margin: 0; font-size: 0.88rem; }
+footer { background: var(--bg2); border-top: 1px solid var(--border); padding: 32px 0; text-align: center; }
+footer p { color: var(--text3); font-size: 0.82rem; }
+footer a { color: #818cf8; text-decoration: none; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo">Auto<span>Flowa</span></a>
+    <a href="index.html" class="nav-back">&larr; Back to Home</a>
+  </div>
+</nav>
+<div class="page-header">
+  <div class="container">
+    <span class="page-tag">About Us</span>
+    <h1>About <span class="gradient-text">AutoFlowa</span></h1>
+    <p class="last-updated">Who we are and what we do</p>
+  </div>
+</div>
+<div class="doc-body">
+  <div class="container">
+    <div class="info-box">
+      <p><strong>AutoFlowa India</strong> helps small businesses, creators, and agencies save time by automating repetitive work, from lead follow-ups and customer replies to data entry and reporting, using modern no-code and low-code tools like n8n, Telegram bots, and Google Workspace.</p>
+    </div>
+    <h2>Our Story</h2>
+    <p>AutoFlowa started with a simple observation: most small businesses in India lose hours every day on tasks a computer could finish in seconds. Replying to the same enquiries, copying data between apps, chasing leads who never got a follow-up message.</p>
+    <p>We built AutoFlowa to close that gap. Instead of expensive enterprise software, we set up practical, affordable automation systems that run quietly in the background and handle the boring work, so you can focus on actually growing your business.</p>
+    <h2>What We Do</h2>
+    <ul>
+      <li><strong>Workflow automation</strong> &mdash; connecting your apps with n8n so data flows automatically between them</li>
+      <li><strong>Telegram and WhatsApp bots</strong> &mdash; automated assistants that answer customers and capture leads 24/7</li>
+      <li><strong>Lead follow-up systems</strong> &mdash; automatic reminders so no enquiry slips through the cracks</li>
+      <li><strong>Reporting and data entry</strong> &mdash; pulling your numbers into clean Google Sheets dashboards without manual work</li>
+    </ul>
+    <h2>Why We Write This Blog</h2>
+    <p>Alongside our services, we publish free, practical guides on automation: how to use n8n, build Telegram bots, automate follow-ups, and more. Our goal is to make automation understandable for non-technical business owners, not just developers. Every guide is written from real, hands-on experience setting up these systems for actual clients.</p>
+    <h2>Our Values</h2>
+    <ul>
+      <li><strong>Practical over hype</strong> &mdash; we only recommend tools and methods we actually use</li>
+      <li><strong>Honesty</strong> &mdash; if automation is not the right fit for a problem, we will say so</li>
+      <li><strong>Privacy first</strong> &mdash; your data stays yours; see our <a href="privacy-policy.html">Privacy Policy</a></li>
+    </ul>
+    <h2>Get In Touch</h2>
+    <p>Have a question, or a repetitive task you would love to automate? Reach us through our <a href="contact.html">Contact page</a>, or message us on <a href="https://t.me/Autoflow_897" target="_blank">Telegram</a>.</p>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <p>&copy; 2026 AutoFlowa India. All rights reserved. &middot; <a href="index.html">Home</a> &middot; <a href="about.html">About</a> &middot; <a href="contact.html">Contact</a> &middot; <a href="blog.html">Blog</a> &middot; <a href="privacy-policy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; <a href="disclaimer.html">Disclaimer</a></p>
+  </div>
+</footer>
+</body>
+</html>
