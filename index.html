@@ -25,6 +25,12 @@
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "sameAs": [
+    "https://t.me/Autoflow_897",
+    "https://www.facebook.com/share/1JUUJedQQy/",
+    "https://www.instagram.com/autoflowa?igsh=MWh0cmk4Ynh0ejNyNw==",
+    "https://www.linkedin.com/in/autoflowa-automation-537bba40b"
+  ],
   "name": "AutoFlowa India",
   "description": "Daily Life & Business Automation using n8n + Telegram Bot Integration",
   "url": "https://autoflowa.in",
@@ -1143,7 +1149,7 @@ footer {
 <!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner container">
-    <a href="/" class="logo" style="display:flex;align-items:center;gap:8px;"><img src="/logo.png" alt="AutoFlowa" style="height:32px;width:auto;">Auto<span>Flowa</span></a>
+    <a href="/" class="logo" style="display:flex;align-items:center;gap:8px;"><img src="logo/autoflowa-mark.png" alt="AutoFlowa" style="height:32px;width:auto;">Auto<span>Flowa</span></a>
     <ul class="nav-links">
       <li><a href="#problem">Problem</a></li>
       <li><a href="#services">Services</a></li>
@@ -1450,6 +1456,63 @@ footer {
         <span class="svc-tag">Creator Economy</span>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- AUTOMATION IN ACTION -->
+<style>
+.af-showcase { max-width: 1100px; margin: 0 auto; padding: 80px 24px; }
+.af-showcase-head { text-align: center; margin-bottom: 48px; }
+.af-showcase-head h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: var(--text); letter-spacing: -0.02em; line-height: 1.15; }
+.af-showcase-head p { color: var(--text2); font-size: 1rem; margin: 14px auto 0; max-width: 560px; line-height: 1.6; }
+.af-showcase-grid { column-count: 2; column-gap: 24px; }
+.af-card { display: block; break-inside: avoid; margin: 0 0 24px; text-decoration: none; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--surface); transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease; }
+.af-card:hover { transform: translateY(-4px); border-color: var(--border2); box-shadow: var(--glow); }
+.af-card img { width: 100%; height: auto; display: block; }
+.af-card-body { padding: 18px 20px; }
+.af-tag { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent3); font-weight: 600; }
+.af-card-title { font-size: 1.02rem; color: var(--text); font-weight: 600; margin-top: 6px; }
+.af-card-desc { font-size: 0.85rem; color: var(--text2); margin-top: 6px; line-height: 1.5; }
+@media (max-width: 720px) { .af-showcase-grid { column-count: 1; } .af-showcase { padding: 56px 20px; } }
+</style>
+<section class="af-showcase" aria-label="Automation in action across industries">
+  <div class="af-showcase-head">
+    <h2>Automation in Action</h2>
+    <p>Real workflows we build for real businesses - from clinics to restaurants to real estate.</p>
+  </div>
+  <div class="af-showcase-grid">
+    <a href="blog-automate-appointment-booking.html" class="af-card">
+      <img src="image/appointment-booking-automation.webp" width="1448" height="1086" loading="lazy" decoding="async" alt="Healthcare appointment booking automation dashboard for clinics that reduces no-shows and saves staff time">
+      <div class="af-card-body">
+        <div class="af-tag">Healthcare</div>
+        <div class="af-card-title">Automated Appointment Booking</div>
+        <div class="af-card-desc">Cut no-shows and free up staff time with smart scheduling and reminders.</div>
+      </div>
+    </a>
+    <a href="blog-whatsapp-auto-reply-bot.html" class="af-card">
+      <img src="image/n8n-restaurant-order-automation.webp" width="1659" height="948" loading="lazy" decoding="async" alt="Restaurant order automation with n8n handling WhatsApp and app orders in real time">
+      <div class="af-card-body">
+        <div class="af-tag">Restaurants</div>
+        <div class="af-card-title">Order Handling on Autopilot</div>
+        <div class="af-card-desc">Receive, extract and confirm orders from WhatsApp automatically.</div>
+      </div>
+    </a>
+    <a href="blog-automate-followups.html" class="af-card">
+      <img src="image/real-estate-lead-automation.webp" width="1055" height="1491" loading="lazy" decoding="async" alt="Real estate lead automation that generates more site visits and closes more property deals">
+      <div class="af-card-body">
+        <div class="af-tag">Real Estate</div>
+        <div class="af-card-title">More Leads, More Deals</div>
+        <div class="af-card-desc">Automate, nurture and close - never let a lead go cold again.</div>
+      </div>
+    </a>
+    <a href="blog-n8n-beginners-guide.html" class="af-card">
+      <img src="image/n8n-workflow-automation-platform.webp" width="1601" height="983" loading="lazy" decoding="async" alt="n8n visual workflow automation platform connecting hundreds of apps and APIs">
+      <div class="af-card-body">
+        <div class="af-tag">Platform</div>
+        <div class="af-card-title">Connect Everything with n8n</div>
+        <div class="af-card-desc">Visual workflows that link 400+ apps, built and managed for you.</div>
+      </div>
+    </a>
   </div>
 </section>
 
@@ -1908,13 +1971,14 @@ footer {
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" class="logo" style="display:flex;align-items:center;gap:8px;"><img src="/logo.png" alt="AutoFlowa" style="height:32px;width:auto;">Auto<span>Flowa</span></a>
+        <a href="/" class="logo" style="display:flex;align-items:center;gap:8px;"><img src="logo/autoflowa-mark.png" alt="AutoFlowa" style="height:32px;width:auto;">Auto<span>Flowa</span></a>
         <p>India's leading n8n + Telegram Bot automation service. Automate your business and daily life in 24 hours. No coding required.</p>
         <div class="social-row">
           <a href="https://t.me/Autoflow_897" target="_blank" class="social-btn" aria-label="Telegram"><svg width="16" height="16" viewBox="0 0 24 24" fill="#94a3b8"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.04 9.613c-.152.682-.555.849-1.126.528l-3.127-2.303-1.509 1.453c-.167.167-.307.307-.63.307l.224-3.18 5.783-5.223c.251-.224-.055-.348-.39-.124L7.56 14.285l-3.043-.951c-.661-.207-.674-.661.138-.977l11.896-4.588c.55-.199 1.031.134.911.479z"/></svg></a>
-          <a href="#" class="social-btn" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.facebook.com/share/1JUUJedQQy/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.instagram.com/autoflowa?igsh=MWh0cmk4Ynh0ejNyNw==" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
           <a href="#" class="social-btn" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a>
-          <a href="#" class="social-btn" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://www.linkedin.com/in/autoflowa-automation-537bba40b" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
         </div>
       </div>
       <div class="footer-col">
