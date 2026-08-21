@@ -24,33 +24,46 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "sameAs": [
-    "https://t.me/Autoflow_897",
-    "https://www.facebook.com/share/1JUUJedQQy/",
-    "https://www.instagram.com/autoflowa?igsh=MWh0cmk4Ynh0ejNyNw==",
-    "https://www.linkedin.com/in/autoflowa-automation-537bba40b"
-  ],
-  "name": "AutoFlowa India",
-  "description": "Daily Life & Business Automation using n8n + Telegram Bot Integration",
-  "url": "https://autoflowa.in/",
-  "telephone": "+91-9679435980",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "IN"
-  },
-  "priceRange": "₹999 - ₹4999",
-  "serviceType": "Business Automation, n8n Automation, Telegram Bot Integration",
-  "areaServed": ["India", "Bangladesh"],
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Automation Services",
-    "itemListElement": [
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Starter Automation"}, "price": "4999", "priceCurrency": "INR"},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business Automation"}, "price": "4999", "priceCurrency": "INR"},
-      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Full Stack Automation"}, "price": "4999", "priceCurrency": "INR"}
-    ]
-  }
+  "@graph": [
+    {
+      "@type": ["Organization", "LocalBusiness"],
+      "@id": "https://autoflowa.in/#organization",
+      "name": "AutoFlowa",
+      "alternateName": "AutoFlowa India",
+      "description": "Daily Life & Business Automation using n8n + Telegram Bot Integration",
+      "url": "https://autoflowa.in/",
+      "logo": "https://autoflowa.in/autoflowa-logo.png",
+      "image": "https://autoflowa.in/autoflowa-logo.png",
+      "telephone": "+91-9679435980",
+      "address": { "@type": "PostalAddress", "addressCountry": "IN" },
+      "priceRange": "₹999 - ₹4999",
+      "areaServed": ["India", "Bangladesh"],
+      "sameAs": [
+        "https://t.me/Autoflow_897",
+        "https://www.facebook.com/share/1JUUJedQQy/",
+        "https://www.instagram.com/autoflowa",
+        "https://www.linkedin.com/in/autoflowa-automation-537bba40b"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Automation Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Starter Automation"}, "price": "999", "priceCurrency": "INR"},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business Automation"}, "price": "4999", "priceCurrency": "INR"},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Full Stack Automation"}, "price": "4999", "priceCurrency": "INR"}
+        ]
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://autoflowa.in/#website",
+      "name": "AutoFlowa",
+      "alternateName": "Auto Flowa",
+      "url": "https://autoflowa.in/",
+      "publisher": { "@id": "https://autoflowa.in/#organization" },
+      "inLanguage": "en"
+    }
+  ]
 }
 </script>
 
