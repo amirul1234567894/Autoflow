@@ -1,6 +1,14 @@
 {
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        { "type": "host", "value": "www.autoflowa.in" }
+      ],
+      "destination": "https://autoflowa.in/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         { "type": "host", "value": "www.autoflowa.in" }
